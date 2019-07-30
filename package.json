@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "vue-cli-service build"
+    "push": "git add * && git commit -m UpdateDist && git push",
+    "clean": "rmdir /S /Q dist",
+    "deploy": "npm run build && npm run clean && npm run push && npm run build && npm run push"
   },
   "dependencies": {
     "core-js": "^2.6.5",
