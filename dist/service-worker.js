@@ -1,29 +1,92 @@
-/**
- * Welcome to your Workbox-powered service worker!
- *
- * You'll need to register this file in your web app and you should
- * disable HTTP caching for this file too.
- * See https://goo.gl/nhQhGp
- *
- * The rest of the code is auto-generated. Please don't update this file
- * directly; instead, make changes to your Workbox build configuration
- * and re-run your build process.
- * See https://goo.gl/2aRDsh
- */
+importScripts("/precache-manifest.d3ee11fbd535166576aaa35757bc7db6.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
-importScripts(
-  "/precache-manifest.7021baf99e5141dbcf95b50c286081e3.js"
-);
+// ---------------------------------------------------------------------------- //
+// -- Service Worker ImportScripts -------------------------------------------- //
+// ---------------------------------------------------------------------------- //
+importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
+// ---------------------------------------------------------------------------- //
 
-workbox.core.setCacheNameDetails({prefix: "mm-app"});
 
-/**
- * The workboxSW.precacheAndRoute() method efficiently caches and responds to
- * requests for URLs in the manifest.
- * See https://goo.gl/S9QRab
- */
+
+
+// ---------------------------------------------------------------------------- //
+// -- Init Settings  ---------------------------------------------------------- //
+// ---------------------------------------------------------------------------- //
+firebase.initializeApp({ 'messagingSenderId': '1034299822340' });
+const messaging = firebase.messaging();
+// ---------------------------------------------------------------------------- //
+
+
+
+
+// ---------------------------------------------------------------------------- //
+// -- Service Worker Workbox & Cache handled ---------------------------------- //
+// ---------------------------------------------------------------------------- //
+workbox.core.setCacheNameDetails({ prefix: "app-tokpets-v2" });
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+// ---------------------------------------------------------------------------- //
+
+
+
+
+
+// ---------------------------------------------------------------------------- //
+// -- Firebase Cloud Messaging ------------------------------------------------ //
+// ---------------------------------------------------------------------------- //
+
+/*
+const messagingPublicKey = 'BLqXfDySoK_0PkM33_Dv4-gaLHw248P4eVrDq_BSb24GGHVkOGn1rFKNGGucRqgvkSSz3dWKMLBS47r37lDp5hY';
+messaging.usePublicVapidKey(messagingPublicKey);
+Notification.requestPermission().then(function (permission) {
+    messaging.getToken().then((token) => {
+        // tslint:disable-next-line: no-console
+        console.log('FCM From SW :: token');
+        console.log(token);
+    });
+}).catch((err) => {
+    console.log('Unable to get permission to notify.', err);
+});
+*/
+messaging.setBackgroundMessageHandler(function (payload) {
+    console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    // Customize notification here
+    var notificationTitle = 'Background Message Title';
+    var notificationOptions = {
+        body: 'Background Message body.',
+        icon: '/favicon.ico'
+    };
+
+    return self.registration.showNotification(notificationTitle,
+        notificationOptions);
+});
+
+// ---------------------------------------------------------------------------- //
+
+
+
+
+
+// ---------------------------------------------------------------------------- //
+// -- Service Worker Events --------------------------------------------------- //
+// ---------------------------------------------------------------------------- //
+self.addEventListener('message', function (event) {
+    console.log("SW Received Message: ");
+    console.log(event.data);
+});
+
+self.addEventListener('push', function (event) {
+    console.log("SW Received PUSH: ");
+    console.log(event.data.text());
+});
+
+self.addEventListener('sync', function (event) {
+    if (event.tag == 'myFirstSync') {
+        event.waitUntil(() => { console.warn(' SW Received Sync MyFirstSync') });
+    }
+});
+// ---------------------------------------------------------------------------- //
+
