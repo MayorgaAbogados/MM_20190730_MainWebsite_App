@@ -54,6 +54,7 @@ import './../../config/vndrs/_index';
 export default class HomeView extends Vue {
 
     private options:any = {
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         menu: '#menu',
         anchors: ['page1', 'page2'],
         sectionsColor: ['#41b883', '#ff5f45']
