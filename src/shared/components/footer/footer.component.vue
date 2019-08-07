@@ -1,5 +1,7 @@
 <template>
+<footer>
     <h1> FOOTER </h1>
+</footer>
 </template>
 
 <script lang="ts">
@@ -38,3 +40,12 @@ export default class FooterComponent extends Vue {
  
 }
 </script>
+
+<style lang="less">
+footer{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 5em 0em;
+}
+</style>

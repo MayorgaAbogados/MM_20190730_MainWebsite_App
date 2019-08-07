@@ -8,6 +8,11 @@ export const HOME_ROUTES = [
         component: HomeView,
     },
     {
+        path: '/home/section/:sectionName',
+        name: 'home/section',
+        component: HomeView,
+    },
+    {
         path: '/home',
         redirect: { name: 'home' },
     },
