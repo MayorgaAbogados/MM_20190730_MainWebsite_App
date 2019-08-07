@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/robots.txt"
   },
   {
-    "revision": "034c8f6e9797de903e750bc257f4e027",
-    "url": "/img/home-cover-bg.034c8f6e.png"
+    "revision": "8b8aab9ef2ee567494af3198187a8a51",
+    "url": "/img/home-cover-bg.8b8aab9e.jpg"
   },
   {
     "revision": "1d66bfd9ce06473627bf",
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/fonts/HelveticaNeue-Light.673264e4.eot"
   },
   {
-    "revision": "73fb4376ec2aa4725d39",
-    "url": "/js/app.22f63407.js"
+    "revision": "882290d4e1448cc1655a",
+    "url": "/js/app.189df8bf.js"
   },
   {
     "revision": "1d66bfd9ce06473627bf",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/img/m-logo.bf6c4f7e.png"
   },
   {
-    "revision": "01f15a6087103ac15d76e4319ce0a725",
+    "revision": "3d684df0538ea88e47bef9ac844bbb1e",
     "url": "/index.html"
   },
   {
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/favicon.png"
   },
   {
-    "revision": "73fb4376ec2aa4725d39",
-    "url": "/css/app.347e5c07.css"
+    "revision": "882290d4e1448cc1655a",
+    "url": "/css/app.7b476521.css"
   },
   {
     "revision": "5963a294b101ce7ab7c1384dec942a2a",

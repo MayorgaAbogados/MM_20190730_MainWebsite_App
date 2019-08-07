@@ -91,17 +91,17 @@ div.view.page.home{
   div.section{
       display: block;
       width: 100vw;
-      border:1px solid red;
+  
 
       &.cover{
         display: block;
-        background-image: url('./../../shared/assets/images/home-cover-bg.png');
+        background-image: url('./../../shared/assets/images/home-cover-bg.jpg');
         background-size: cover;
         background-position: center;
 
         div.wrapper{
 
-           display: block;
+          display: block;
           width: 100vw;
           height: 100vh;
           
