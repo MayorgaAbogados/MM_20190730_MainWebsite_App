@@ -1,17 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>mm-app</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but mm-app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+
+  <!-- UNICODE UTF-8 -->
+  <meta charset=utf-8>
+
+  <!-- IE-EDGE Support -->
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+
+  <!-- Viewport -->
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=5">
+
+  <!-- Google Site Verification --->
+  <meta name=google-site-verification content="">
+
+  <!-- Basic SEO Meta Tags -->
+  <meta name="author" content="<%= VUE_APP_AUTHOR %>">
+  <meta name="image" content="<%= VUE_APP_IMAGE_URL %>">
+  <meta name="keywords" content="<%= VUE_APP_KEYWORDS %>">
+  <meta name="description" content="<%= VUE_APP_DESCRIPTION %>">
+
+  <meta name=robots content="index, follow">
+
+  <!-- Phone Number Format Detection -->
+  <meta name=format-detection content="telephone=no">
+
+  <!-- Mobile Web App Capable -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="DC-Covers">
+
+  <!-- Google Translate -->
+  <meta name=google content=notranslate>
+
+  <!-- Geo Position -->
+  <meta name=geo.region content=CO>
+  <meta name=geo.placename content=Bogot&aacute;>
+  <meta name=geo.position content=4.698699;-74.030875>
+  <meta name=ICBM content="4.698699, -74.030875">
+
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="<%= VUE_APP_TITLE %>">
+  <meta itemprop="description" content="<%= VUE_APP_DESCRIPTION %>">
+  <meta itemprop="image" content="<%= VUE_APP_IMAGE_URL %>">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= VUE_APP_TITLE %>">
+  <meta name="twitter:description" content="<%= VUE_APP_DESCRIPTION %>">
+
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="<%= VUE_APP_TITLE %>">
+  <meta name="og:description" content="<%= VUE_APP_DESCRIPTION %>">
+  <meta name="og:image" content="<%= VUE_APP_IMAGE_URL %>">
+  <meta name="og:url" content="<%= BASE_URL %>">
+  <meta name="og:site_name" content="<%= VUE_APP_TITLE %>">
+  <meta name="og:type" content="website">
+
+  <!-- Icons & Favicons-->
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>img/icon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>img/icon/favicon-32x32.png">
+
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" sizes="60x60" href="<%= BASE_URL %>img/icon/apple-touch-icon/60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<%= BASE_URL %>img/icon/apple-touch-icon/76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<%= BASE_URL %>img/icon/apple-touch-icon/120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<%= BASE_URL %>img/icon/apple-touch-icon/152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>img/icon/apple-touch-icon/180x180.png">
+
+  <!-- Mask Icon -->
+  <link rel="mask-icon" href="<%= BASE_URL %>img/icon/safari-pinned-tab.svg" color="#282828">
+
+  <!-- MS App Tiles  -->
+  <meta name="msapplication-TileImage" content="<%= VUE_APP_IMAGE_URL %>">
+  <meta name="msapplication-TileColor" content="#000">
+
+  <title><%= VUE_APP_TITLE %></title>
+
+  <meta name="theme-color" content="#282828" />
+  <link rel="manifest" href="/manifest.json" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <noscript>
+    <strong>
+      We're sorry but mayorga_pwa doesn't work properly without JavaScript enabled. Please enable it to continue.
+    </strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

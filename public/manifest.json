@@ -1,20 +1,24 @@
 {
-  "name": "mm-app",
-  "short_name": "mm-app",
-  "icons": [
-    {
-      "src": "./img/icons/android-chrome-192x192.png",
+  "start_url": "/index.html",
+
+  "name": "TokPets | Pet's Tracker Device ",
+  "short_name": "TokPets",
+
+  "display": "standalone",
+  "orientation": "portrait",
+
+  "theme_color": "#282828",
+  "background_color": "#282828",
+
+  "icons": [{
+      "src": "./img/icons/android-chrome-white-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./img/icons/android-chrome-512x512.png",
+      "src": "./img/icons/android-chrome-white-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  ]
 }

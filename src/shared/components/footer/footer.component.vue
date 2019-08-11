@@ -1,0 +1,51 @@
+<template>
+<footer>
+    <h1> FOOTER </h1>
+</footer>
+</template>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component({})
+export default class FooterComponent extends Vue {
+
+    @Prop({default: ''}) public placeholder: string|undefined;
+    @Prop({default: ''}) public icon: string|undefined;
+    @Prop({default: 'light'}) public theme: string|undefined;
+    @Prop({default: 'fixed'}) public layout: string|undefined;
+    @Prop({default: '0em 0em'}) public paddings: string|undefined;
+    @Prop({default: 'bottom'}) public position: string|undefined;
+
+    private db: any = (this as any).$db;
+    private error: boolean = true;
+    private text: string = '';
+
+    private mounted() {}
+    private inputClass(): string {
+        return `${this.theme} ${this.layout} ${this.position}`;
+    }
+
+    private onType(): void {
+        this.$emit('onType',this.text);
+    };
+
+    private onFocus(): void{
+
+    };
+
+    private onBlur(): void{
+        
+    }
+ 
+}
+</script>
+
+<style lang="less">
+footer{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 5em 0em;
+}
+</style>
