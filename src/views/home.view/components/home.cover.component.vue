@@ -3,13 +3,19 @@
 
 
         <div class="cover-background">
-            <bg-picture 
-                :path="COVER_BG.path" 
-                :alt="COVER_BG.alt" 
-                :file="COVER_BG.file"
-                :formats="COVER_BG.formats"
-                :resolutions="COVER_BG.resolutions">
-            </bg-picture>
+            
+            <div class="layer-content">
+                <bg-picture 
+                    :path="COVER_BG.path" 
+                    :alt="COVER_BG.alt" 
+                    :file="COVER_BG.file"
+                    :formats="COVER_BG.formats"
+                    :resolutions="COVER_BG.resolutions">
+                </bg-picture>
+            </div>
+            <div class="layer-color">
+            </div>
+
         </div>
 
         <div class="cover-front">
@@ -67,6 +73,25 @@ div.cover{
         position: absolute;
         top: 0px;
         left: 0px;
+
+        .layer-content{
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .layer-color{
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            //background-color: #345063;
+            //opacity: 0.5;
+        }
     }
      .cover-front{
          display: block;

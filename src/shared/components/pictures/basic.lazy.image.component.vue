@@ -1,8 +1,5 @@
 <template>
-    <div class="image">
-
-
-<h1>{{REMOVE}}</h1>
+    <div class="image" :class="getClass()">
 
         <div class="webp" v-if="FORMAT === FORMAT_TYPES.WEBP">
 
@@ -34,6 +31,7 @@ export default class BasicLazyImageComponent extends Vue {
     @Prop({default: '/pictures/'}) public path: string|undefined;
     @Prop({default: 'Mayorga Abogados Image'}) public alt: string|undefined;
     @Prop({default: 'home-cover-bg'}) public file: string|undefined;
+    @Prop({default: 'full-w'}) public size: string|undefined;
 
     private FORMAT_TYPES = {
         JPG:0,
@@ -64,19 +62,23 @@ export default class BasicLazyImageComponent extends Vue {
 
        if(this.STATE == this.STATE_TYPES.NORMAL){
            this.STATE = this.STATE_TYPES.HD;
-           setTimeout( () => this.REMOVE.THUMB = true , 1000);
+           setTimeout( () => this.REMOVE.THUMB = true , 5000);
        }
 
        if(this.STATE == this.STATE_TYPES.HD){
            this.STATE = this.STATE_TYPES.K4;
-           setTimeout( () => this.REMOVE.NORMAL = true , 1000);
+           setTimeout( () => this.REMOVE.NORMAL = true , 5000);
        }
 
         if(this.STATE == this.STATE_TYPES.K4){
            this.STATE = this.STATE_TYPES.K4;
-           setTimeout( () => this.REMOVE.HD = true , 1000);
+           setTimeout( () => this.REMOVE.HD = true , 5000);
        }
 
+    }
+
+    private getClass(): string{
+        return `${this.size}`;
     }
 
     private mounted(){
@@ -96,7 +98,7 @@ div.image{
     width: 100%;
     height: 100%;
     
-    .webp,.jpg,img{
+    .webp,.jpg{
         display: block;
         position: relative;
         width: 100%;
@@ -111,6 +113,24 @@ div.image{
     .webp-thumb,.jpg-thumb{
           filter: blur(10px);
           transition: filter 0.7s;
+    }
+
+    &.cover{
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+    }
+
+    &.full-w{
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
 
 

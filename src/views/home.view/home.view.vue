@@ -11,8 +11,13 @@
             </div>
 
              <div class="section">
-               <h1>about</h1>
+               <about-component></about-component>
             </div>
+
+             <div class="section">
+              <map-component></map-component>
+            </div>
+            
             <div class="section fp-auto-height">
                 <div style="height: 250px;">
                  <h1>FOOTER</h1>
@@ -35,6 +40,7 @@ import FooterComponent from './../../shared/components/footer/footer.component.v
 
 import HomeCoverComponent from './components/home.cover.component.vue';
 import HomeAboutComponent from './components/home.about.component.vue';
+import HomeMapComponent from './components/home.maps.component.vue';
 
 
 
@@ -44,6 +50,7 @@ import HomeAboutComponent from './components/home.about.component.vue';
     'footer-component' : FooterComponent,
     'cover-component' : HomeCoverComponent,
     'about-component' : HomeAboutComponent,
+    'map-component': HomeMapComponent,
   },
 })
 export default class HomeView extends Vue {
@@ -52,8 +59,8 @@ export default class HomeView extends Vue {
 
     private options:any = {
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        anchors: ['header', 'cover','about','footer'],
-        sectionsColor: ['#ffffff', '#000000','#41b883', '#055d36'],
+        anchors: ['header', 'cover','about','map','footer'],
+        sectionsColor: ['#ffffff', '#000000','#ffffff','#ffffff', '#000000'],
     };
 
     private setSection($sectionName:string):void{
