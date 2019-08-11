@@ -1,6 +1,6 @@
 self.__precacheManifest = [
   {
-    "revision": "528d20048535a80dc43ca847cb7874f6",
+    "revision": "99021c9c7c84fc9827991f7ec696282f",
     "url": "/index.html"
   },
   {
@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/pictures/home-cover-bg/home-cover-bg-hd.webp"
   },
   {
-    "revision": "628e99858d5306d7bf67d50b54aecefd",
-    "url": "/pictures/home-cover-bg/home-cover-bg-thumb.jpg"
-  },
-  {
     "revision": "691b7983de39e4add8970f66f846c315",
     "url": "/pictures/home-cover-bg/home-cover-bg-thumb.webp"
+  },
+  {
+    "revision": "628e99858d5306d7bf67d50b54aecefd",
+    "url": "/pictures/home-cover-bg/home-cover-bg-thumb.jpg"
   },
   {
     "revision": "c2c4c7221ee923d5aeb02a38eb776f79",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/img/m-text.4db51330.png"
   },
   {
-    "revision": "fae14c58d690bb0a31a9",
-    "url": "/js/app.27015136.js"
+    "revision": "322ab3dc24b471a95de2",
+    "url": "/js/app.c6eaeb13.js"
   },
   {
     "revision": "d2ddcdc527944bd6770903071575ce74",
@@ -84,8 +84,8 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.91b5b724.css"
   },
   {
-    "revision": "fae14c58d690bb0a31a9",
-    "url": "/css/app.26dbdb48.css"
+    "revision": "322ab3dc24b471a95de2",
+    "url": "/css/app.38d99ef4.css"
   },
   {
     "revision": "5963a294b101ce7ab7c1384dec942a2a",
