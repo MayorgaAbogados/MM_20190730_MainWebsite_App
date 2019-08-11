@@ -4,19 +4,19 @@
 
         <div class="webp" v-if="FORMAT === FORMAT_TYPES.WEBP">
 
-            <img class="webp-thumb"  :alt="alt"  :src="`${path}${file}/${file}-thumb.webp`"  v-if="STATE == STATE_TYPES.THUMB" @load="upResolution()"/>
-            <img class="webp-normal" :alt="alt"  :src="`${path}${file}/${file}-normal.webp`" v-if="STATE <= STATE_TYPES.NORMAL" @load="upResolution()"/>
-            <img class="webp-hd"     :alt="alt"  :src="`${path}${file}/${file}-hd.webp`"     v-if="STATE <= STATE_TYPES.HD" @load="upResolution()"/>
-            <img class="webp-4k"     :alt="alt"  :src="`${path}${file}/${file}-4k.webp`"     v-if="STATE <= STATE_TYPES.K4" @load="upResolution()"/>
+            <img class="webp-thumb"  :alt="alt"  :src="`${path}${file}/${file}-thumb.webp`"  v-if="STATE >= STATE_TYPES.THUMB" @load="upResolution()"/>
+            <img class="webp-normal" :alt="alt"  :src="`${path}${file}/${file}-normal.webp`" v-if="STATE >= STATE_TYPES.NORMAL" @load="upResolution()"/>
+            <img class="webp-hd"     :alt="alt"  :src="`${path}${file}/${file}-hd.webp`"     v-if="STATE >= STATE_TYPES.HD" @load="upResolution()"/>
+            <img class="webp-4k"     :alt="alt"  :src="`${path}${file}/${file}-4k.webp`"     v-if="STATE >= STATE_TYPES.K4" @load="upResolution()"/>
 
         </div>
 
         <div class="jpg" v-if="FORMAT === FORMAT_TYPES.JPG">
 
-            <img class="jpg-thumb"  :alt="alt"  :src="`${path}${file}/${file}-thumb.jpg`"    v-if="STATE <= STATE_TYPES.THUMB" @load="upResolution()"/>
-            <img class="jpg-normal" :alt="alt"  :src="`${path}${file}/${file}-normal.jpg`"   v-if="STATE <= STATE_TYPES.NORMAL" @load="upResolution()"/>
-            <img class="jpg-hd"     :alt="alt"  :src="`${path}${file}/${file}-hd.jpg`"       v-if="STATE <= STATE_TYPES.HD" @load="upResolution()"/>
-            <img class="jpg-4k"     :alt="alt"  :src="`${path}${file}/${file}-4k.jpg`"       v-if="STATE <= STATE_TYPES.K4" @load="upResolution()"/>
+            <img class="jpg-thumb"  :alt="alt"  :src="`${path}${file}/${file}-thumb.jpg`"    v-if="STATE >= STATE_TYPES.THUMB" @load="upResolution()"/>
+            <img class="jpg-normal" :alt="alt"  :src="`${path}${file}/${file}-normal.jpg`"   v-if="STATE >= STATE_TYPES.NORMAL" @load="upResolution()"/>
+            <img class="jpg-hd"     :alt="alt"  :src="`${path}${file}/${file}-hd.jpg`"       v-if="STATE >= STATE_TYPES.HD" @load="upResolution()"/>
+            <img class="jpg-4k"     :alt="alt"  :src="`${path}${file}/${file}-4k.jpg`"       v-if="STATE >= STATE_TYPES.K4" @load="upResolution()"/>
 
         </div>
         -
@@ -49,15 +49,12 @@ export default class BasicLazyImageComponent extends Vue {
 
 
     private upResolution(): void{
-        if(this.STATE === 0){
-            this.STATE = 1;
-        }
-        if(this.STATE === 1){
-            this.STATE = 2;
-        }
-        if(this.STATE === 3){
-            this.STATE = 3;
-        }
+
+            if(this.STATE < 3){
+                this.STATE = this.STATE + 1;
+            }else{
+                this.STATE = 3;
+            }
     }
 
     private mounted(){
@@ -66,7 +63,6 @@ export default class BasicLazyImageComponent extends Vue {
         this.FORMAT = isSafari ? this.FORMAT_TYPES.JPG : this.FORMAT_TYPES.WEBP;
         this.STATE = this.STATE_TYPES.THUMB;
 
-        setTimeout( () => this.STATE = 1, 2000)
     }
 }
 </script>
