@@ -59,7 +59,7 @@ export default class HomeView extends Vue {
 
     private options:any = {
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        anchors: ['header', 'cover','about','map','footer'],
+        anchors: ['header', 'cover','about','map-section','footer'],
         sectionsColor: ['#ffffff', '#000000','#ffffff','#ffffff', '#000000'],
     };
 

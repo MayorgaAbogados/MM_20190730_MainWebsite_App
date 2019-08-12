@@ -1,3 +1,5 @@
+var webpack = require('webpack')
+
 module.exports = {
 
     indexPath: 'index.html',
@@ -35,6 +37,14 @@ module.exports = {
             swSrc: './src/config/sw/service-worker.js',
             // ...other Workbox options...
         }
+    },
+
+    configureWebpack: {
+        plugins: [
+            new webpack.ProvidePlugin({
+                mapboxgl: 'mapbox-gl'
+            })
+        ]
     }
 
 
