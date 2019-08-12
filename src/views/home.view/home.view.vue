@@ -2,26 +2,24 @@
   <div class="view page home"> 
 
         <full-page ref="fullpage" :options="options" id="fullpage">
-            <div class="section fp-auto-height">
+            <div class="section header-section fp-auto-height">
               <header-component :section="section" @update="setSection"></header-component>
             </div>
 
-            <div class="section cover">
+            <div class="section cover-section">
               <cover-component></cover-component>
             </div>
 
-             <div class="section">
+             <div class="section about-section">
                <about-component></about-component>
             </div>
 
-             <div class="section">
+             <div class="section map-section">
               <map-component></map-component>
             </div>
             
-            <div class="section fp-auto-height">
-                <div style="height: 250px;">
-                 <h1>FOOTER</h1>
-                </div>
+            <div class="section footer-section fp-auto-height">
+               <footer-component></footer-component>
             </div>
         </full-page>
 
@@ -93,6 +91,12 @@ div.view.page.home{
       &.cover{
         display: block;
         width: 100vw;
+      }
+
+      &.footer{
+        display: block;
+        width: 100vw;
+        height: fit-content;
       }
   }
 }

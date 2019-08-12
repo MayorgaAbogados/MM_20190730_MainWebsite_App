@@ -1,7 +1,7 @@
 <template>
-<footer>
-    <h1> FOOTER </h1>
-</footer>
+    <footer>
+        <h1> FOOTER </h1>
+    </footer>
 </template>
 
 <script lang="ts">
@@ -44,8 +44,31 @@ export default class FooterComponent extends Vue {
 <style lang="less">
 footer{
     display: block;
-    width: 100%;
-    height: auto;
-    padding: 5em 0em;
+    width: 100vw;
+    height: 100px;
+    padding: 0em 0em;
+
+    color: white;
+    background-color:#345063;
+
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 </style>
