@@ -20,7 +20,7 @@
                     <li> 
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
-                            Derecho Aduaerno Penal y Económico
+                            Derecho Penal y Económico
                         </div>
                     </li>
                     <li>

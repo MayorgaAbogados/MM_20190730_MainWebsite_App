@@ -23,6 +23,8 @@
             </div>
         </full-page>
 
+        <vip-form-component></vip-form-component>
+
   </div>
 </template>
 
@@ -40,6 +42,8 @@ import HomeCoverComponent from './components/home.cover.component.vue';
 import HomeAboutComponent from './components/home.about.component.vue';
 import HomeMapComponent from './components/home.maps.component.vue';
 
+import FloatingVIPFormComponent from './components/home.premiun.form.component.vue';
+
 
 
 @Component({
@@ -49,6 +53,7 @@ import HomeMapComponent from './components/home.maps.component.vue';
     'cover-component' : HomeCoverComponent,
     'about-component' : HomeAboutComponent,
     'map-component': HomeMapComponent,
+    'vip-form-component': FloatingVIPFormComponent,
   },
 })
 export default class HomeView extends Vue {

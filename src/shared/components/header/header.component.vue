@@ -14,7 +14,12 @@
             <div class="header-middle-menu">
                 <ul class="menu">
                    
-                    <li class="menu-item" :class="isActive('about')" @click="setActive('about')"><span>¿Quiénes somos?</span></li>
+                    <li class="menu-item" :class="isActive('about')" @click="setActive('about')">
+                        <span>
+                         ¿Quiénes somos?
+                        </span>
+                    </li>
+
                     <li class="menu-item" :class="isActive('people')" @click="setActive('people')"><span>Profesionales</span></li>
                     <li class="menu-item" :class="isActive('services')" @click="setActive('services')"><span>Servicios</span></li>
                     <li class="menu-item" :class="isActive('clients')" @click="setActive('clients')"><span>Clientes</span></li>
@@ -32,8 +37,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import DropdownMenuComponent from './../dropdown/dropdown.component.vue';
 
-@Component({})
+@Component({
+    components:{
+        'menu-dropdown-components' :DropdownMenuComponent
+    }
+})
 export default class HeaderComponent extends Vue {
 
     @Prop({default: 'home'}) public section: string|undefined;
@@ -59,6 +69,9 @@ header{
     display: block;
     width: 100vw;
     height: 100px;
+    min-height: 100px;
+    overflow: visible;
+    z-index: 100;
     padding: 0em 0em;
     background-color:white;
     div.header-top{
@@ -75,9 +88,12 @@ header{
 
         display: block;
         width: 100%;
+        
         box-sizing: border-box;
         padding: 0em 2em;
-        height: ~"calc(100px - 5px)";
+        //height: ~"calc(100px - 5px)";
+
+
 
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -91,12 +107,12 @@ header{
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: flex-start;
+        align-content: flex-start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: flex-start;
+        align-items: flex-start;
 
         &-logo{
             display: -ms-flexbox;
@@ -134,36 +150,22 @@ header{
     }
 
     ul.menu{
-
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: flex-end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;;
-        -webkit-align-content: center;
-        -ms-flex-line-pack: center;
-        align-content: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
+ 
     }
 
     li.menu-item{
-        display: block;
+        display: inline-block;
+        vertical-align: top;
         padding: 0em 0em;
         padding-right: 2em;
+        padding-top:2em; 
         cursor: pointer;
         color: @color-main-gray;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
         letter-spacing: 1px;
+
+  
 
         span{
             display: block;

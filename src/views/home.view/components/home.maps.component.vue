@@ -4,8 +4,8 @@
             :access-token="'pk.eyJ1IjoiamxtYXlvcmdhMjM2IiwiYSI6ImNqejdkOXlzcTA1c24zaHF4ZjM3a2plbDYifQ.jQIHsgjalYySzE5PEZc5Ng'"
             :map-options="{
                 style: 'mapbox://styles/mapbox/light-v10',
-                center: {lon: -74.063644, lat: 4.624335},
-                zoom: 15
+                center: {lon: -74.126343, lat: 4.686100},
+                zoom: 13
             }"
             :geolocate-control="{
                 show: true,
@@ -35,7 +35,7 @@ import Mapbox from 'mapbox-gl-vue';
 export default class HomeMapComponent extends Vue {
 
     private markers: any = [];
-    private position: any = { lat: 10, lng: 10 };
+    private position: any = {lon: -74.126343, lat: 4.686100};
 
     private mounted(){
 
@@ -50,22 +50,22 @@ export default class HomeMapComponent extends Vue {
             type: 'Feature',
             geometry: {
               type: 'Point',
-              coordinates: {lon: -74.063644, lat: 4.624334}
+              coordinates: {lon: -74.126343, lat: 4.686100},
             },
             properties: {
               title: 'Mapbox',
-              description: 'Washington, D.C.'
+              description: 'Torre Central Davivienda'
             }
           },
           {
             type: 'Feature',
             geometry: {
               type: 'Point',
-              coordinates: {lon: -74.063644, lat: 4.624336}
+              coordinates: {lon: -74.126343, lat: 4.686100},
             },
             properties: {
               title: 'Mapbox',
-              description: 'San Francisco, California'
+              description: 'Torre Central Davivienda'
             }
           }
         ]
@@ -119,11 +119,11 @@ div.map{
 
 .Map__marker_office {
     display: block;
-    background-color: green;
-    background-size: cover;
+    background-image:url('./../../../shared/assets/images/map-icon-mm.png');
+    background-size:100%;
     width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    height: 70px;
+    border-radius: 0%;
     cursor: pointer;
 }
 
