@@ -12,12 +12,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-
-  display: block;
-  width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
 }
 </style>

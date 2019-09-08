@@ -6,6 +6,8 @@ import store from './store/index.store';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
+
+
 Vue.use(VueAxios, axios);
 
 import './config/sw/registerServiceWorker';

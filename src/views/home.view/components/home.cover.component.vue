@@ -1,21 +1,18 @@
 <template>
     <div class="cover">
 
-
         <div class="cover-background">
-            
-            <div class="layer-content">
-                <bg-picture 
+            <div class="layer-content" v-bind:style="{ top: `-${0.5*this.scrollPosition}vh` }">
+                <bg-video 
                     :path="COVER_BG.path" 
                     :alt="COVER_BG.alt" 
                     :file="COVER_BG.file"
                     :formats="COVER_BG.formats"
                     :resolutions="COVER_BG.resolutions">
-                </bg-picture>
+                </bg-video>
             </div>
             <div class="layer-color">
             </div>
-
         </div>
 
         <div class="cover-front">
@@ -37,17 +34,24 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import BasicLazyImageComponent from './../../../shared/components/pictures/basic.lazy.image.component.vue';
+import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
+import BasicLazyVideoComponent from './../../../shared/components/videos/basic.lazy.video.component.vue';
 
 
 
 @Component({
     components: {
-        'bg-picture' : BasicLazyImageComponent
+        'bg-video' : BasicLazyVideoComponent
     }
 })
 export default class LogoComponent extends Vue {
+
+   @Prop({default: 'scrollPosition'}) public scrollPosition: number|undefined;
+    
+   @Watch('scrollPosition')
+   onChildChanged(val: string, oldVal: string) {
+       console.log(val)
+   }
 
     private COVER_BG: any = {
         file: 'home-cover-bg',
@@ -62,25 +66,34 @@ export default class LogoComponent extends Vue {
 div.cover{
     display: block;
     position: relative;
+    overflow: hidden;
 
-        width: 100vw;
-        height: 100vh;
+    width: 100vw;
+    height: 100vh;
 
      .cover-background{
-         display: block;
+        display: block;
         width: 100vw;
         height: 100vh;
         position: absolute;
-        top: 0px;
+        top: 0vh;
         left: 0px;
 
+ 
         .layer-content{
             display: block;
-            width: 100vw;
-            height: 100vh;
+             width: 100vw;
+            height: 150vh;
             position: absolute;
             top: 0px;
             left: 0px;
+
+            -webkit-transition: all 100ms ease-out;
+            -moz-transition: all 100ms ease-out;
+            -ms-transition: all 100ms ease-out;
+            -o-transition: all 100ms ease-out;
+            transition: all 100ms ease-out;
+
         }
         .layer-color{
             display: block;

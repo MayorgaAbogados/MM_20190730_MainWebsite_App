@@ -1,6 +1,6 @@
 import './pouch-db.import';
 import './analytics.import';
-import './fullpage.import';
+//import './fullpage.import';
 import './vue-lazyload';
 //import './google-maps.import';
 

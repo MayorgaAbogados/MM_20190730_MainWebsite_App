@@ -87,6 +87,7 @@ export default class IndexProgressBarComponent extends Vue {
 div.about{
 
     display: block;
+      background-color: white;
     width: 100%;
     height:100vh;
 

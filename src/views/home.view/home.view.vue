@@ -1,29 +1,23 @@
 <template>
-  <div class="view page home"> 
+  <div id="view-home-id" class="view page home" v-on:scroll="handleScroll"> 
 
-        <full-page ref="fullpage" :options="options" id="fullpage">
-            <div class="section header-section fp-auto-height">
-              <header-component :section="section" @update="setSection"></header-component>
-            </div>
+    <header-component :section="section" @update="setSection"></header-component>
 
-            <div class="section cover-section">
-              <cover-component></cover-component>
-            </div>
+    <div class="section">
+      <cover-component :scrollPosition="coverPositionScroll"></cover-component>
+    </div>
 
-             <div class="section about-section">
-               <about-component></about-component>
-            </div>
+    <div class="section">
+      <about-component></about-component>
+    </div>
 
-             <div class="section map-section">
-              <map-component></map-component>
-            </div>
-            
-            <div class="section footer-section fp-auto-height">
-               <footer-component></footer-component>
-            </div>
-        </full-page>
+    <div class="section">
+      <map-component></map-component>
+    </div>
 
-        <vip-form-component></vip-form-component>
+    <footer-component></footer-component>
+
+    <vip-form-component></vip-form-component>
 
   </div>
 </template>
@@ -59,12 +53,7 @@ import FloatingVIPFormComponent from './components/home.premiun.form.component.v
 export default class HomeView extends Vue {
 
     private section: string = '';
-
-    private options:any = {
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        anchors: ['header', 'cover','about','map-section','footer'],
-        sectionsColor: ['#ffffff', '#000000','#ffffff','#ffffff', '#000000'],
-    };
+    private coverPositionScroll: number = 0;
 
     private setSection($sectionName:string):void{
       this.section = $sectionName;
@@ -73,6 +62,21 @@ export default class HomeView extends Vue {
 
     private beforeMount(){
       this.section = this.$route.params.sectionName;
+    }
+
+    handleScroll (event: any) {
+      const maxY = (document as any).documentElement.clientHeight;
+      const posY = (document as any).getElementById('view-home-id').scrollTop;
+      const pos$ = 100.00 * (posY + 0.0)/(maxY + 0.0);
+      this.coverPositionScroll =  Math.min(Math.max(pos$, 0), 100);
+    }
+
+    private created () {
+      window.addEventListener('scroll', this.handleScroll);
+    }
+
+    private destroyed () {
+      window.removeEventListener('scroll', this.handleScroll);
     }
 
 }
@@ -85,24 +89,18 @@ export default class HomeView extends Vue {
 @color-main-blue: #60A8E2;
 div.view.page.home{
     
-  #view(column,center,center);
+  //#view(column,center,center);
+  display: block;
   width: 100vw;
-  height: auto;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  
 
   div.section{
-       display: block;
-        width: 100vw;
-
-      &.cover{
-        display: block;
-        width: 100vw;
-      }
-
-      &.footer{
-        display: block;
-        width: 100vw;
-        height: fit-content;
-      }
+      display: block;
+      width: 100vw;
+      height: 100vh;
   }
 }
 </style>

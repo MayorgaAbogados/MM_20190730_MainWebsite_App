@@ -6,29 +6,132 @@
         </div> 
 
         <div class="header-middle">
-        
             <div class="header-middle-logo">
                 <img class="m-logo" src="./../../assets/images/m-logo.png">
                 <img class="m-text" src="./../../assets/images/m-text.png">
             </div>
             <div class="header-middle-menu">
-                <ul class="menu">
-                   
-                    <li class="menu-item" :class="isActive('about')" @click="setActive('about')">
-                        <span>
-                         ¿Quiénes somos?
-                        </span>
+                <ul class="menu">                 
+                    <li class="menu-item" 
+                        @click="setActive('about')"
+                        @mouseenter="setTabActive('about')"
+                        @mouseleave="setTabActive('')">
+                        <menu-dropdown
+                            :title="'¿Quiénes somos?'"
+
+                            :hoverClass="isTabActive('about')"
+                            :selectedClass="isActive('about')"
+
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>   
                     </li>
+                    <li class="menu-item"  @click="setActive('people')" @mouseenter="setTabActive('people')" @mouseleave="setTabActive('')">
+                         <menu-dropdown
+                            :title="'Profesionales'"
+                            
+                            :hoverClass="isTabActive('people')"
+                            :selectedClass="isActive('people')"
 
-                    <li class="menu-item" :class="isActive('people')" @click="setActive('people')"><span>Profesionales</span></li>
-                    <li class="menu-item" :class="isActive('services')" @click="setActive('services')"><span>Servicios</span></li>
-                    <li class="menu-item" :class="isActive('clients')" @click="setActive('clients')"><span>Clientes</span></li>
-                    <li class="menu-item" :class="isActive('publishing')" @click="setActive('publishing')"><span>Publicaciones</span></li>
-                    <li class="menu-item" :class="isActive('contact')" @click="setActive('contact')"><span>Contacto</span></li>
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>  
+                    </li>
+                    <li class="menu-item"  @click="setActive('services')" @mouseenter="setTabActive('services')" @mouseleave="setTabActive('')">
+                         <menu-dropdown
+                            
+                            :title="'servicios'"
 
+                            :hoverClass="isTabActive('services')"
+                            :selectedClass="isActive('services')"
+
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>  
+                    </li>
+                    <li class="menu-item"  @click="setActive('clients')" @mouseenter="setTabActive('clients')" @mouseleave="setTabActive('')">
+                         <menu-dropdown
+                            :title="'Clientes'"
+
+                            :hoverClass="isTabActive('clients')"
+                            :selectedClass="isActive('clients')"
+
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>  
+                    </li>
+                    <li class="menu-item"  @click="setActive('publishing')" @mouseenter="setTabActive('publishing')" @mouseleave="setTabActive('')">
+                         <menu-dropdown
+                            :title="'Publicaciones'"
+
+                            :hoverClass="isTabActive('publishing')"
+                            :selectedClass="isActive('publishing')"
+
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>  
+                    </li>
+                    <li class="menu-item"  @click="setActive('contact')" @mouseenter="setTabActive('contact')" @mouseleave="setTabActive('')">
+                        <menu-dropdown
+                            :title="'Contacto'"
+                            
+                            :hoverClass="isTabActive('contact')"
+                            :selectedClass="isActive('contact')"
+
+                            :options="[{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            },{
+                                text: 'link a',
+                                link: 'http://google.com.co'
+                            }]"
+                        ></menu-dropdown>  
+                    </li>
                 </ul>
             </div>
-
         </div>
 
           
@@ -41,20 +144,29 @@ import DropdownMenuComponent from './../dropdown/dropdown.component.vue';
 
 @Component({
     components:{
-        'menu-dropdown-components' :DropdownMenuComponent
+        'menu-dropdown' :DropdownMenuComponent
     }
 })
 export default class HeaderComponent extends Vue {
 
     @Prop({default: 'home'}) public section: string|undefined;
+    private tabActive: string = '';
+
     private mounted() {}
 
     private setActive(tabName: string): void {
         this.$emit('update',tabName);
     };
 
+    private setTabActive(tabName: string): void{
+        this.tabActive = tabName;
+    }
+
     private isActive(tabName: string): string {
-        return (this.section === tabName) ? 'active' : '';
+        return (this.section === tabName) ? 'selected-active' : 'selected-default';
+    };
+    private isTabActive(tabName: string): string {
+        return (this.tabActive === tabName) ? 'hover-active' : 'hover-default';
     };
 
  
@@ -74,6 +186,8 @@ header{
     z-index: 100;
     padding: 0em 0em;
     background-color:white;
+    position: fixed;
+    top: 0px;
     div.header-top{
         display: block;
         width: 100%;
@@ -154,33 +268,11 @@ header{
     }
 
     li.menu-item{
+
         display: inline-block;
         vertical-align: top;
-        padding: 0em 0em;
-        padding-right: 2em;
-        padding-top:2em; 
-        cursor: pointer;
-        color: @color-main-gray;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        letter-spacing: 1px;
 
   
-
-        span{
-            display: block;
-            padding-top: 0.5em;
-            border-top: 2px solid white;
-        }
-
-        &.active{
-            color: @color-main-blue;
-            span{
-                display: block;
-                padding-top: 0.5em;
-                border-top: 2px solid @color-main-blue;
-            }
-        }
     }
 }
 </style>
