@@ -5,61 +5,62 @@
 
                 <div class="title-line"></div>
                 
-                <h1 class="title-text">¿QUIÉNES <br> SOMOS?</h1>
+                <h1 class="title-text"  v-scroll-show="scrollPosition > 30">¿QUIÉNES <br> SOMOS?</h1>
                 
-                <p>
+                <p v-scroll-show="scrollPosition > 40">
                     <strong>MAYORGA ABOGADOS</strong>, es un Estudio Jurídico y Económico, creado en 2005, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en  asesoría y asistencia legal corporativa, en las siguientes AREAS DE PRÁCTICA:
                 </p>
                 <ul>
-                    <li>
+                    <li v-scroll-show="scrollPosition > 50">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho Aduanero
                         </div>
                     </li>
-                    <li> 
+                    <li v-scroll-show="scrollPosition > 60"> 
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho Penal y Económico
                         </div>
                     </li>
-                    <li>
+                    <li v-scroll-show="scrollPosition > 70">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho del Comercio Exterior
                         </div>
                     </li>
-                    <li>
+                    <li v-scroll-show="scrollPosition > 80">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho Tributario
                         </div>
                     </li>
-                    <li>
+                    <li v-scroll-show="scrollPosition > 90">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho Cambiario
                         </div>
                     </li>
-                    <li>
+                    <li v-scroll-show="scrollPosition > 100">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
                             Derecho Mercantil y Societario
                         </div>
                     </li>
                 </ul>
-                <button>Exitos y logros</button>
+                <button v-scroll-show="scrollPosition > 120">Exitos y logros</button>
             </div>
         </div>
-        <div class="col right">
+        <div class="col right" >
             <bg-picture :size="'cover'" :file="ABOUT_BG.file" :alt="ABOUT_BG.alt"></bg-picture>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import BasicLazyImageComponent from './../../../shared/components/pictures/basic.lazy.image.component.vue';
+import ScrollReveal from 'scrollreveal';
 
 
 @Component({
@@ -69,16 +70,25 @@ import BasicLazyImageComponent from './../../../shared/components/pictures/basic
 })
 export default class IndexProgressBarComponent extends Vue {
 
+    @Prop({default: 'scrollPosition'}) public scrollPosition: number|undefined;
+
+
+
      private ABOUT_BG: any = {
         file: 'home-about-bg',
         alt: 'Mayorga Abogados Nosotros'
     }
 
+
+
+    
+
 }
 </script>
 
 <style scoped lang="less">
-//@import './../../../../src/shared/styles/main.less';
+@import './../../../../src/shared/styles/main.less';
+
 @color-dark-blue: #345063;
 @color-main-blue: #578ABE;
 @color-light-blue: #60A8E2;
@@ -143,6 +153,9 @@ div.about{
         font-size: @font-title-size;
         font-weight: 700;
         letter-spacing: 1px;
+
+        #scroll-show-fade();    
+
     }
 
     p{

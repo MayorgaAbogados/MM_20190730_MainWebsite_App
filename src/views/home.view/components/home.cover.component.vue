@@ -48,10 +48,7 @@ export default class LogoComponent extends Vue {
 
    @Prop({default: 'scrollPosition'}) public scrollPosition: number|undefined;
     
-   @Watch('scrollPosition')
-   onChildChanged(val: string, oldVal: string) {
-       console.log(val)
-   }
+
 
     private COVER_BG: any = {
         file: 'home-cover-bg',

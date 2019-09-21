@@ -8,14 +8,14 @@
     </div>
 
     <div class="section">
-      <about-component></about-component>
+      <about-component :scrollPosition="coverPositionScroll"></about-component>
     </div>
 
-    <div class="section">
+    <div class="section" >
       <map-component></map-component>
     </div>
 
-    <footer-component></footer-component>
+    <footer-component ></footer-component>
 
     <vip-form-component></vip-form-component>
 
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 
-import './../../config/vndrs/_index';
+
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
@@ -38,7 +38,9 @@ import HomeMapComponent from './components/home.maps.component.vue';
 
 import FloatingVIPFormComponent from './components/home.premiun.form.component.vue';
 
-
+import './../../config/vndrs/_index';
+import './../../config/directives/v-visibility';
+import './../../config/directives/v-scroll-show';
 
 @Component({
   components: {
@@ -68,7 +70,7 @@ export default class HomeView extends Vue {
       const maxY = (document as any).documentElement.clientHeight;
       const posY = (document as any).getElementById('view-home-id').scrollTop;
       const pos$ = 100.00 * (posY + 0.0)/(maxY + 0.0);
-      this.coverPositionScroll =  Math.min(Math.max(pos$, 0), 100);
+      this.coverPositionScroll =  Math.min(Math.max(pos$, 0), 200);
     }
 
     private created () {
@@ -103,4 +105,7 @@ div.view.page.home{
       height: 100vh;
   }
 }
+
+
+
 </style>
