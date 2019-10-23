@@ -1,6 +1,6 @@
 <template>
     <div class="image" :class="getClass()">
-
+            
         <div class="webp" v-if="FORMAT === FORMAT_TYPES.WEBP">
 
             <img class="webp-thumb"  :alt="alt"  :src="`${path}${file}/${file}-thumb.webp`"  v-if="STATE >= STATE_TYPES.THUMB && !REMOVE.THUMB" @load="upResolution()"/>

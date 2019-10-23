@@ -1,5 +1,6 @@
 <template>
     <div class="image" :class="getClass()">
+        
  
         <video  class="webp-video" 
                 preload="auto"

@@ -6,7 +6,8 @@
         </div>
         <ul class="dropdown-menu--items" :class="`${hoverClass} ${selectedClass}`">
             <li class="dropdown-menu--item" v-for="(item,index) of options" v-bind:key="index">
-               <a :href="item.link"> {{ item.text }} </a>
+               <a v-if="item.link.includes('http')" :href="item.link" > {{ item.text }} </a>
+               <router-link v-if="!item.link.includes('http')"  :to="item.link" > {{ item.text }} </router-link>
             </li>
         </ul>
           

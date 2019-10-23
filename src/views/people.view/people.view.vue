@@ -3,21 +3,30 @@
 
     <header-component :section="section" @update="setSection"></header-component>
 
-    <div class="section">
-      <cover-component :scrollPosition="coverPositionScroll"></cover-component>
+    <div class="section full-h">
+        <cover-component :scrollPosition="coverPositionScroll"></cover-component>
     </div>
 
-    <div class="section">
+    <div class="section auto-h">
       <about-component :scrollPosition="coverPositionScroll"></about-component>
     </div>
 
-    <div class="section" >
-      <map-component></map-component>
+    <div class="section auto-h" >
+      <experience-component :scrollPosition="coverPositionScroll"></experience-component>
     </div>
+
+    <div class="section auto-h" >
+        <team-component :scrollPosition="coverPositionScroll"></team-component>
+    </div>
+
+    
+    <div class="section full-h" >
+        <map-component></map-component>
+    </div>
+
 
     <footer-component ></footer-component>
 
-    <vip-form-component></vip-form-component>
 
   </div>
 </template>
@@ -32,8 +41,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import HeaderComponent from './../../shared/components/header/header.component.vue';
 import FooterComponent from './../../shared/components/footer/footer.component.vue';
 
-import HomeCoverComponent from './components/home.cover.component.vue';
-import HomeAboutComponent from './components/home.about.component.vue';
+import PeopleCoverComponent from './components/people.cover.component.vue';
+import PeopleAboutComponent from './components/people.about.component.vue';
+import PeopleExperienceComponent from './components/people.experience.component.vue';
+import PeopleTeamComponent from './components/people.team.component.vue';
 import HomeMapComponent from './components/home.maps.component.vue';
 
 import FloatingVIPFormComponent from './components/home.premiun.form.component.vue';
@@ -46,10 +57,11 @@ import './../../config/directives/v-scroll-show';
   components: {
     'header-component' : HeaderComponent,
     'footer-component' : FooterComponent,
-    'cover-component' : HomeCoverComponent,
-    'about-component' : HomeAboutComponent,
+    'cover-component' : PeopleCoverComponent,
+    'about-component' : PeopleAboutComponent,
+    'experience-component' : PeopleExperienceComponent,
+    'team-component' : PeopleTeamComponent,
     'map-component': HomeMapComponent,
-    'vip-form-component': FloatingVIPFormComponent,
   },
 })
 export default class HomeView extends Vue {
@@ -102,7 +114,14 @@ div.view.page.home{
   div.section{
       display: block;
       width: 100vw;
-      height: 100vh;
+      
+
+      &.full-h{
+        height: 100vh;
+      }
+      &.auto-h{
+        height: fit-content;
+      }
   }
 }
 

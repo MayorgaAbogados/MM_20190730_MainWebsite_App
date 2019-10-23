@@ -4,9 +4,6 @@ Vue.directive('scroll-show', function (el, binding) {
     // v-bind:class="{ show: scrollPosition > 50, hide : scrollPosition < 50 }" 
     const isScrollShow = !!binding.value;
 
-    console.log(' V-SCROLL  DIRECTIVE ');
-    console.log(isScrollShow)
-
     if (!isScrollShow) {
 
         el.style.transition = 'all 500ms ease-in-out';

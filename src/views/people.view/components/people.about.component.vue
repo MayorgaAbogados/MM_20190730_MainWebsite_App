@@ -1,59 +1,54 @@
 <template>
     <div class="about">
-        <div class="col left">
+        
+        <div class="col left" >
+            <bg-picture :size="'cover'" :file="ABOUT_BG.file" :alt="ABOUT_BG.alt"></bg-picture>
+        </div>
+
+        <div class="col right">
             <div class="wrapper">
 
                 <div class="title-line"></div>
                 
-                <h1 class="title-text"  v-scroll-show="scrollPosition > 30">¿QUIÉNES <br> SOMOS?</h1>
-                
-                <p v-scroll-show="scrollPosition > 40">
-                    <strong>MAYORGA ABOGADOS</strong>, es un Estudio Jurídico y Económico, creado en 2005, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en  asesoría y asistencia legal corporativa, en las siguientes AREAS DE PRÁCTICA:
-                </p>
+                <h1 class="title-text"  v-scroll-show="scrollPosition > 30">
+                    Director Jurídico
+                </h1>
+                <h2 class="subtitle-text" v-scroll-show="scrollPosition > 40">
+                    MIGUEL A. MAYORGA
+                </h2>
+
                 <ul>
                     <li v-scroll-show="scrollPosition > 50">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
-                            Derecho Aduanero
+                            Abogado egresado de la Universidad Nacional de Colombia (GRADUADO CON HONORES)
                         </div>
                     </li>
                     <li v-scroll-show="scrollPosition > 60"> 
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
-                            Derecho Penal y Económico
+                            Especializado en Tributación y Comercio Exterior en la Universidad de los Andes (GRADUADO CON HONORES)
                         </div>
                     </li>
                     <li v-scroll-show="scrollPosition > 70">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
-                            Derecho del Comercio Exterior
+                            Diplomado Internacional SEMINAIRE DE FORMATIOM D’ENQUETEURS Direction Nationale du
+                            Recrutement et de la Formation Professionnelle
+                            des Douanes Francaises.
                         </div>
                     </li>
                     <li v-scroll-show="scrollPosition > 80">
                         <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
                         <div class="li-wrapper">
-                            Derecho Tributario
-                        </div>
-                    </li>
-                    <li v-scroll-show="scrollPosition > 90">
-                        <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Cambiario
-                        </div>
-                    </li>
-                    <li v-scroll-show="scrollPosition > 100">
-                        <img class="li-bullet" src="@/shared/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Mercantil y Societario
+                            Programa de Extensión DERECHO Y RELACIONES INTERNACIONALES de la Universidad Nacional de Colombia
                         </div>
                     </li>
                 </ul>
-                <button v-scroll-show="scrollPosition > 120">Exitos y logros</button>
+                <button v-scroll-show="scrollPosition > 120">Contactar</button>
             </div>
         </div>
-        <div class="col right" >
-            <bg-video :size="'cover'" :file="ABOUT_BG.file" :alt="ABOUT_BG.alt"></bg-video>
-        </div>
+
     </div>
 </template>
 
@@ -77,7 +72,7 @@ export default class IndexProgressBarComponent extends Vue {
 
 
      private ABOUT_BG: any = {
-        file: 'home-about-bg',
+        file: 'people-director-bg',
         alt: 'Mayorga Abogados Nosotros'
     }
 
@@ -91,11 +86,6 @@ export default class IndexProgressBarComponent extends Vue {
 <style scoped lang="less">
 @import './../../../../src/shared/styles/main.less';
 
-@color-dark-blue: #345063;
-@color-main-blue: #578ABE;
-@color-light-blue: #60A8E2;
-@font-title-size: 40px;
-@font-text-size: 18px;
 div.about{
 
     display: block;
@@ -149,6 +139,7 @@ div.about{
         display: block;
         width: fit-content;
         padding: 0.5em 0em;
+        padding-bottom: 0px;
         
         color: @color-dark-blue;
         font-family: 'Roboto', sans-serif;
@@ -158,6 +149,20 @@ div.about{
 
         #scroll-show-fade();    
 
+    }
+
+    h2.subtitle-text{
+        display: block;
+        width: fit-content;
+        padding: 0.5em 0em;
+        
+        color: @color-light-blue;
+        font-family: 'Roboto', sans-serif;
+        font-size: @font-title-small-size;
+        font-weight: 700;
+        letter-spacing: 1px;
+
+        #scroll-show-fade()
     }
 
     p{

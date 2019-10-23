@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="header">
         
         <div class="header-top">
             <img src="./../../assets/images/header-gradient-top.png">
@@ -23,14 +23,14 @@
                             :selectedClass="isActive('about')"
 
                             :options="[{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Home',
+                                link: '/home/section/cover'
                             },{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Nosotros',
+                                link: '/home/section/about-us'
                             },{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Ubicanos',
+                                link: '/home/section/map'
                             }]"
                         ></menu-dropdown>   
                     </li>
@@ -42,14 +42,14 @@
                             :selectedClass="isActive('people')"
 
                             :options="[{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Director Juridico',
+                                link: '/people/section/director'
                             },{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Experiencia Juridica',
+                                link: '/people/section/experience'
                             },{
-                                text: 'link a',
-                                link: 'http://google.com.co'
+                                text: 'Equipo Legal',
+                                link: '/people/section/team'
                             }]"
                         ></menu-dropdown>  
                     </li>
@@ -177,7 +177,7 @@ export default class HeaderComponent extends Vue {
 
 @color-main-blue: #60A8E2;
 @color-main-gray: #B3B3B3;
-header{
+.header{
     display: block;
     width: 100vw;
     height: 100px;
@@ -188,6 +188,7 @@ header{
     background-color:white;
     position: fixed;
     top: 0px;
+    z-index: 1000;
     div.header-top{
         display: block;
         width: 100%;
