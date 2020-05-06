@@ -1,0 +1,323 @@
+[
+    {
+        "category": "LABORAL",
+        "services": [
+            {
+                "name" : "CONTRATOS",
+                "layout": {
+                    "cols": 2
+                },
+                "form" : [
+                    {
+                        "id": "name_a",
+                        "col": 0,
+                        "type": "text",
+                        "name": "Nombre Parte A"
+                    },
+                    {
+                        "id": "name_b",
+                        "col": 0,
+                        "type": "text",
+                        "name": "Nombre Parte B"
+                    },
+                    {
+                        "id": "misc_1",
+                        "col": 0,
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 1"
+                    },
+                    {
+                        "id": "misc_2",
+                        "col": 0,
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 2"
+                    },
+                    {
+                        "id": "misc_3",
+                        "col": 0,
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 3"
+                    },
+                    {
+                        "id": "mics_options",
+                        "col": 1,
+                        "type": "options",
+                        "name": "Opciones",
+                        "options": ["op1","op2","op3","op4","op5"]
+                    },
+                    {
+                        "id": "mount",
+                        "col": 1,
+                        "type": "text",
+                        "name": "Monto Disputa"
+                    },
+                    {
+                        "id": "comment",
+                        "col": 1,
+                        "type": "textarea",
+                        "name": "Comentarios Adicionales"
+                    }
+                ]
+            },
+            {
+                "name" : "LIQUIDACION",
+                "form" : [
+                    {
+                        "id": "name_a",
+                        "type": "text",
+                        "name": "Nombre Parte A"
+                    },
+                    {
+                        "id": "name_b",
+                        "type": "text",
+                        "name": "Nombre Parte B"
+                    },
+                    {
+                        "id": "mics_options",
+                        "type": "options",
+                        "name": "Opciones",
+                        "options": ["op1","op2","op3","op4","op5"]
+                    },
+                    {
+                        "id": "mount",
+                        "type": "text",
+                        "name": "Monto Disputa"
+                    },
+                    {
+                        "id": "misc_1",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 1"
+                    },
+                    {
+                        "id": "misc_2",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 2"
+                    },
+                    {
+                        "id": "comment",
+                        "type": "textarea",
+                        "name": "Comentarios Adicionales"
+                    }
+                ]
+            },
+            {
+                "name" : "PENSIONES",
+                "form" : [
+                    {
+                        "id": "name_a",
+                        "type": "text",
+                        "name": "Nombre Parte A"
+                    },
+                    {
+                        "id": "name_b",
+                        "type": "text",
+                        "name": "Nombre Parte B"
+                    },
+                    {
+                        "id": "mics_options",
+                        "type": "options",
+                        "name": "Opciones",
+                        "options": ["op1","op2","op3","op4","op5"]
+                    },
+                    {
+                        "id": "mount",
+                        "type": "text",
+                        "name": "Monto Disputa"
+                    },
+                    {
+                        "id": "misc_1",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 1"
+                    },
+                    {
+                        "id": "misc_2",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 2"
+                    },
+                    {
+                        "id": "comment",
+                        "type": "textarea",
+                        "name": "Comentarios Adicionales"
+                    }
+                ]
+            },
+            {
+                "name" : "RIESGOS",
+                "form" : [
+                    {
+                        "id": "name_a",
+                        "type": "text",
+                        "name": "Nombre Parte A"
+                    },
+                    {
+                        "id": "name_b",
+                        "type": "text",
+                        "name": "Nombre Parte B"
+                    },
+                    {
+                        "id": "mics_options",
+                        "type": "options",
+                        "name": "Opciones",
+                        "options": ["op1","op2","op3","op4","op5"]
+                    },
+                    {
+                        "id": "mount",
+                        "type": "text",
+                        "name": "Monto Disputa"
+                    },
+                    {
+                        "id": "misc_1",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 1"
+                    },
+                    {
+                        "id": "misc_2",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 2"
+                    },
+                    {
+                        "id": "comment",
+                        "type": "textarea",
+                        "name": "Comentarios Adicionales"
+                    }
+                ]
+            },
+            {
+                "name" : "OTROS",
+                "form" : [
+                    {
+                        "id": "name_a",
+                        "type": "text",
+                        "name": "Nombre Parte A"
+                    },
+                    {
+                        "id": "name_b",
+                        "type": "text",
+                        "name": "Nombre Parte B"
+                    },
+                    {
+                        "id": "mics_options",
+                        "type": "options",
+                        "name": "Opciones",
+                        "options": ["op1","op2","op3","op4","op5"]
+                    },
+                    {
+                        "id": "mount",
+                        "type": "text",
+                        "name": "Monto Disputa"
+                    },
+                    {
+                        "id": "misc_1",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 1"
+                    },
+                    {
+                        "id": "misc_2",
+                        "type": "text",
+                        "name": "Pregunta Miscelanea 2"
+                    },
+                    {
+                        "id": "comment",
+                        "type": "textarea",
+                        "name": "Comentarios Adicionales"
+                    }
+                ]
+            }
+        ]
+    },{
+        "category": "CIVIL",
+        "services": [
+            {
+                "name" : "CONTRATOS"
+            },
+            {
+                "name" : "LIQUIDACION"
+            },
+            {
+                "name" : "PENSIONES"
+            },
+            {
+                "name" : "RIESGOS"
+            },
+            {
+                "name" : "OTROS"
+            }
+        ]
+    },{
+        "category": "TRIBUTARIO",
+        "services": [
+            {
+                "name" : "TRIBUTARIO 1"
+            },
+            {
+                "name" : "TRIBUTARIO 2"
+            },
+            {
+                "name" : "TRIBUTARIO 3"
+            },
+            {
+                "name" : "TRIBUTARIO 4"
+            },
+            {
+                "name" : "OTROS"
+            }
+        ]
+    },{
+        "category": "PENAL",
+        "services": [
+            {
+                "name" : "PENAL 1"
+            },
+            {
+                "name" : "PENAL 2"
+            },
+            {
+                "name" : "PENAL 3"
+            },
+            {
+                "name" : "PENAL 4"
+            },
+            {
+                "name" : "OTROS"
+            }
+        ]
+    },{
+        "category": "ADUANERO",
+        "services": [
+            {
+                "name" : "ADUANERO 1"
+            },
+            {
+                "name" : "ADUANERO 2"
+            },
+            {
+                "name" : "ADUANERO 3"
+            },
+            {
+                "name" : "ADUANERO 4"
+            },
+            {
+                "name" : "OTROS"
+            }
+        ]
+    },{
+        "category": "AMBIENTAL",
+        "services": [
+            {
+                "name" : "AMBIENTAL 1"
+            },
+            {
+                "name" : "AMBIENTAL 2"
+            },
+            {
+                "name" : "AMBIENTAL 3"
+            },
+            {
+                "name" : "AMBIENTAL 4"
+            },
+            {
+                "name" : "OTROS"
+            }
+        ]
+    }
+]

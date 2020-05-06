@@ -1,0 +1,42 @@
+<div class="view view-services" id="view">
+
+    <mm-header></mm-header>
+
+    <section>
+      <div class="swiper-budget" :class="{ 'bg-blue' : SLIDE_BG === 'blue' , 'bg-white' : SLIDE_BG === 'white'}">
+
+
+        <swiper :options="swiperOption" ref="ConsultingSwiperRef">
+
+
+            
+            <!-- slides / Welcome -->
+            <swiper-slide name="WelcomeSlide">
+                <mm-slide-welcome :isTest="true" @next="nextSlide()" @prev="prevSlide()"></mm-slide-welcome>
+            </swiper-slide>
+
+
+            <!-- slides / ContactForm -->
+            <swiper-slide name="ContactFormSlide">
+                <mm-slide-contact-form v-if="SLIDE_INDEX === 1" :isTest="false" @next="nextSlide($event)" @prev="prevSlide()"></mm-slide-contact-form>
+            </swiper-slide>
+
+
+            <!-- slides / BookingCalendar -->
+            <swiper-slide name="BookingCalendarSlide">
+                <mm-slide-booking-calendar :isTest="false" @goToPayU="goToPayU($event)" @next="nextSlide()" @prev="prevSlide($event)"></mm-slide-booking-calendar>
+            </swiper-slide>
+
+
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+      </div>
+    </section>
+
+    <section style="display:block; position:relative;">
+      <mm-footer></mm-footer>
+    </section>
+
+    <mm-payu-payment style="visibility: hidden;" :isTest="false" :payment="payment" ref="payu"></mm-payu-payment>
+
+  </div>

@@ -1,3 +1,5 @@
+var webpack = require('webpack')
+
 module.exports = {
 
     indexPath: 'index.html',
@@ -21,20 +23,13 @@ module.exports = {
     },
 
 
-    pwa: {
-        name: 'Tok Pets | PWA App',
-        themeColor: '#282828',
-        msTileColor: '#000000',
-        appleMobileWebAppCapable: 'yes',
-        appleMobileWebAppStatusBarStyle: 'black',
-
-        // configure the workbox plugin
-        workboxPluginMode: 'InjectManifest',
-        workboxOptions: {
-            // swSrc is required in InjectManifest mode.
-            swSrc: './src/config/sw/service-worker.js',
-            // ...other Workbox options...
-        }
+    
+    configureWebpack: {
+        plugins: [
+            new webpack.ProvidePlugin({
+                mapboxgl: 'mapbox-gl'
+            })
+        ]
     }
 
 

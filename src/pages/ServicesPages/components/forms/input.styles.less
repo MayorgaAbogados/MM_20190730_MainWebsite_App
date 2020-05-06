@@ -1,0 +1,175 @@
+
+@color-white: white;
+@color-dark-blue: #345063;
+@color-light-blue: #79A6DF;
+@color-gray: #BBBBBE;
+@color-red: #d82f3f;
+
+
+@font-size-label: 14pt;
+@font-size-input: 10pt;
+@font-size-error: 10px;
+
+
+.bg-color-white{
+    background-color: @color-white;
+}
+.bg-color-dark_blue{
+    background-color: @color-dark-blue;
+}
+.bg-color-light_blue{
+    background-color: @color-light-blue;
+}
+.bg-color-gray{
+    background-color: @color-gray;
+}
+
+
+.mm-input-group{
+
+    display: block;
+    width: 100%;
+
+    font-family: Roboto,sans-serif;
+
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0em;
+
+    .input-group{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px;
+        &.x2{
+            width: 50%;
+            &:first-child{
+                padding-right: 0em;
+            }
+            &:last-child{
+                padding-left: 0em;
+            }
+        }
+    }
+
+    .input-group-label{
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-weight: 300;
+
+            color: white;
+
+    display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        h5{
+            font-size: @font-size-label;
+            width: fit-content;
+            color: @color-light-blue;
+            margin-bottom: 0rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        h2{
+            font-size: @font-size-label;
+            width: fit-content;
+            color: white;
+            margin-bottom: 0rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+    }
+
+
+    .input-group-input{
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        margin: 0em 0em;
+        padding: 0em;
+        font-weight: 300;
+        font-size: @font-size-input;
+        color: @color-white;
+
+        .input-group-input-wrapper{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.2em;
+            color: @color-dark-blue;
+            background-color: #E6E6E6;
+            border: 2px solid #E6E6E6;
+            border-radius: 1em;
+            &.error{
+                color: @color-red !important;
+                border-color: @color-red;
+                input{
+                  color: @color-red !important;  
+                }
+            }
+        }
+        .input-group-input-error{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0;
+            color: white;
+            font-size: @font-size-error;
+            letter-spacing: 2px;
+            padding: 5px;
+            text-align: right;
+            opacity: 1;
+            &.hidden{
+                opacity: 0;
+            }
+        }
+        input{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            outline:none;
+            background: none;
+            border:none;
+            color: @color-dark-blue !important;
+            padding-left: 1em;
+            font-size: @font-size-input;
+        }
+
+        textarea{
+            width: 100%;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 1em;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+    }
+
+
+
+
+}
