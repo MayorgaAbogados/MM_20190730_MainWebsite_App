@@ -22,7 +22,7 @@
               <mm-grid-central>
 
                 <mm-title-large 
-                  :title="'ABOGADOS JURÍDICOS ESPECIALIZADOS'">
+                  :title="'ABOGADOS JURÍDICOS ESPECIALIZADOS *'">
                 </mm-title-large>
 
                 <mm-text-large 
