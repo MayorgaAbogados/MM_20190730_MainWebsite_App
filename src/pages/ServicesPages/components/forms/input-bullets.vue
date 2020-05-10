@@ -26,7 +26,11 @@ export default class ContactFormSlideView extends Vue {
 
 
     setOption($event: any){
-        this.$emit('onChange', this.OPTION)
+        console.warn('')
+        console.warn('setOption($event: any){')
+        console.warn($event.target.value)
+        console.warn('')
+        this.$emit('onChange', $event.target.value)
     }
 
     checkError(){

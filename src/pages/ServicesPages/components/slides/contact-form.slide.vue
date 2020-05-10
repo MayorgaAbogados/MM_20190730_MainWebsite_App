@@ -149,7 +149,7 @@ export default class ContactFormSlideView extends Vue {
         city: this.isTest ? 'BOGOTA' :  '',
         authorized_data: this.isTest ? true : false,
         typeOfMeeting: 'Skype',
-        comments: this.isTest ? 'ESTE ES UN COIMENTARIO DE PRUEBA' : '',
+        comments: this.isTest ? 'ESTE ES UN COIMENTARIO DE PRUEBA' : ' - ',
         files: [],
         refCode: ''
     }
@@ -197,9 +197,39 @@ export default class ContactFormSlideView extends Vue {
     nextSlide(): void {
         console.error()
         this.CONSULTING.refCode = this.CONSULTING.name + ':' + this.CONSULTING.nit;
-        this.$emit('next', { 
+        if(
+            this.CONSULTING.name.length > 0 &&
+            this.CONSULTING.company.length > 0 &&
+            this.CONSULTING.nit.length > 0 &&
+            this.CONSULTING.email.length > 0 && this.CONSULTING.email.includes('@') &&
+            this.CONSULTING.phone.length > 0 &&
+            this.CONSULTING.skype.length > 0 &&
+            this.CONSULTING.city.length > 0 &&
+            this.CONSULTING.authorized_data === 'SI' &&
+            this.CONSULTING.typeOfMeeting.length > 0 &&
+            this.CONSULTING.comments.length > 0
+        ) {
+             this.$emit('next', { 
             CONTACT_FORM: this.CONSULTING
         });
+        } else {
+            console.error(this.CONSULTING.name.length > 0)
+            console.error(this.CONSULTING.company.length> 0)
+            console.error(this.CONSULTING.nit.length > 0)
+            console.error(this.CONSULTING.email.length > 0 && this.CONSULTING.email.includes('@'))
+            console.error(this.CONSULTING.phone.length> 0)
+            console.error(this.CONSULTING.skype.length> 0)
+            console.error(this.CONSULTING.city.length> 0)
+            console.error(this.CONSULTING.authorized_data === 'SI')
+            console.error(this.CONSULTING.typeOfMeeting.length > 0)
+            console.error(this.CONSULTING.typeOfMeeting)
+            console.error(this.CONSULTING.comments.length> 0)
+            console.error(this.CONSULTING.comments)
+            console.error(this.CONSULTING)
+
+            alert(' FAVOR INGRESAR LOS VALORES CORRECTOS EN EL FORMULARIO ')
+        }
+       
     }
     prevSlide(): void {
         this.$emit('prev')
