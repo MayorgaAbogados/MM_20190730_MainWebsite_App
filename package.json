@@ -53,7 +53,7 @@
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": ""
   },
   "lint-staged": {
     "*.ts": [

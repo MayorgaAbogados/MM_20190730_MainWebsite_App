@@ -116,14 +116,14 @@
 
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
-import MMInputTextComponent from "./../forms/input-text.vue";
-import MMInputEmailComponent from "./../forms/input-email.vue";
-import MMInputPhoneComponent from "./../forms/input-phone.vue";
-import MMInputTextAreaComponent from "./../forms/input-textarea.vue";
-import MMInputFilesComponent from "./../forms/input-files.vue";
-import MMInputBulletsComponent from "./../forms/input-bullets.vue";
+import MMInputTextComponent from './../forms/input-text.vue';
+import MMInputEmailComponent from './../forms/input-email.vue';
+import MMInputPhoneComponent from './../forms/input-phone.vue';
+import MMInputTextAreaComponent from './../forms/input-textarea.vue';
+import MMInputFilesComponent from './../forms/input-files.vue';
+import MMInputBulletsComponent from './../forms/input-bullets.vue';
 
 
 @Component({
@@ -134,12 +134,12 @@ import MMInputBulletsComponent from "./../forms/input-bullets.vue";
       'mm-input-textarea' : MMInputTextAreaComponent,
       'mm-input-files' : MMInputFilesComponent,
       'mm-input-bullets' : MMInputBulletsComponent,
-  }
+  },
 })
 export default class ContactFormSlideView extends Vue {
         @Prop({default: 'isTest'}) public isTest: boolean|undefined;
 
-    private CONSULTING:any = {
+    private CONSULTING: any = {
         name: this.isTest ? 'JORGE LUIS MAYORGA TEST' : '',
         company: this.isTest ? 'COMPAÑIA MAYORGA' : '',
         nit: this.isTest ? '10102071111' :  '',
@@ -151,53 +151,53 @@ export default class ContactFormSlideView extends Vue {
         typeOfMeeting: 'Skype',
         comments: this.isTest ? 'ESTE ES UN COIMENTARIO DE PRUEBA' : ' - ',
         files: [],
-        refCode: ''
-    }
+        refCode: '',
+    };
 
-    setName(name: string){
+    public setName(name: string) {
         this.CONSULTING.name = name;
     }
-    setCompany(company: string){
-        this.CONSULTING.company =company;
-    }  
-    setNIT(nit: string){
+    public setCompany(company: string) {
+        this.CONSULTING.company = company;
+    }
+    public setNIT(nit: string) {
         this.CONSULTING.nit = nit;
     }
-    setEmail(email: string){
+    public setEmail(email: string) {
         this.CONSULTING.email = email;
     }
-    setPhone(phone: string){
+    public setPhone(phone: string) {
         this.CONSULTING.phone = phone;
     }
-    setSkype(skype: string){
+    public setSkype(skype: string) {
         this.CONSULTING.skype = skype;
     }
-    setCity(city: string){
+    public setCity(city: string) {
         this.CONSULTING.city = city;
     }
-    setAuthorizeData(authorized: string){
+    public setAuthorizeData(authorized: string) {
         this.CONSULTING.authorized_data = authorized;
     }
-    setTypeOfMeeting(typeOfMeeting: string){
+    public setTypeOfMeeting(typeOfMeeting: string) {
        this.CONSULTING.typeOfMeeting = typeOfMeeting;
     }
-    setComments(comments: string){
+    public setComments(comments: string) {
         this.CONSULTING.comments = comments;
     }
-    setFiles(files: any[]){
+    public setFiles(files: any[]) {
         this.CONSULTING.files = files;
     }
-    
 
 
 
 
 
 
-    nextSlide(): void {
-        console.error()
+
+    public nextSlide(): void {
+        console.error();
         this.CONSULTING.refCode = this.CONSULTING.name + ':' + this.CONSULTING.nit;
-        if(
+        if (
             this.CONSULTING.name.length > 0 &&
             this.CONSULTING.company.length > 0 &&
             this.CONSULTING.nit.length > 0 &&
@@ -209,30 +209,30 @@ export default class ContactFormSlideView extends Vue {
             this.CONSULTING.typeOfMeeting.length > 0 &&
             this.CONSULTING.comments.length > 0
         ) {
-             this.$emit('next', { 
-            CONTACT_FORM: this.CONSULTING
+             this.$emit('next', {
+            CONTACT_FORM: this.CONSULTING,
         });
         } else {
-            console.error(this.CONSULTING.name.length > 0)
-            console.error(this.CONSULTING.company.length> 0)
-            console.error(this.CONSULTING.nit.length > 0)
-            console.error(this.CONSULTING.email.length > 0 && this.CONSULTING.email.includes('@'))
-            console.error(this.CONSULTING.phone.length> 0)
-            console.error(this.CONSULTING.skype.length> 0)
-            console.error(this.CONSULTING.city.length> 0)
-            console.error(this.CONSULTING.authorized_data === 'SI')
-            console.error(this.CONSULTING.typeOfMeeting.length > 0)
-            console.error(this.CONSULTING.typeOfMeeting)
-            console.error(this.CONSULTING.comments.length> 0)
-            console.error(this.CONSULTING.comments)
-            console.error(this.CONSULTING)
+            console.error(this.CONSULTING.name.length > 0);
+            console.error(this.CONSULTING.company.length > 0);
+            console.error(this.CONSULTING.nit.length > 0);
+            console.error(this.CONSULTING.email.length > 0 && this.CONSULTING.email.includes('@'));
+            console.error(this.CONSULTING.phone.length > 0);
+            console.error(this.CONSULTING.skype.length > 0);
+            console.error(this.CONSULTING.city.length > 0);
+            console.error(this.CONSULTING.authorized_data === 'SI');
+            console.error(this.CONSULTING.typeOfMeeting.length > 0);
+            console.error(this.CONSULTING.typeOfMeeting);
+            console.error(this.CONSULTING.comments.length > 0);
+            console.error(this.CONSULTING.comments);
+            console.error(this.CONSULTING);
 
-            alert(' FAVOR INGRESAR LOS VALORES CORRECTOS EN EL FORMULARIO ')
+            alert(' FAVOR INGRESAR LOS VALORES CORRECTOS EN EL FORMULARIO ');
         }
-       
+
     }
-    prevSlide(): void {
-        this.$emit('prev')
+    public prevSlide(): void {
+        this.$emit('prev');
     }
 
 }

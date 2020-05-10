@@ -2,15 +2,15 @@
 
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
-import MMInputTextComponent from "./../forms/input-text.vue";
+import MMInputTextComponent from './../forms/input-text.vue';
 
 
 @Component({
   components: {
-      'mm-input-text': MMInputTextComponent
-  }
+      'mm-input-text': MMInputTextComponent,
+  },
 })
 export default class ContactFormSlideView extends Vue {
 
@@ -25,26 +25,26 @@ export default class ContactFormSlideView extends Vue {
     private OPTION: any = {};
 
 
-    setOption($event: any){
-        console.warn('')
-        console.warn('setOption($event: any){')
-        console.warn($event.target.value)
-        console.warn('')
-        this.$emit('onChange', $event.target.value)
+    public setOption($event: any) {
+        console.warn('');
+        console.warn('setOption($event: any){');
+        console.warn($event.target.value);
+        console.warn('');
+        this.$emit('onChange', $event.target.value);
     }
 
-    checkError(){
-        
+    public checkError() {
+
     }
 
-    nextSlide(): void {
-        this.$emit('next')
+    public nextSlide(): void {
+        this.$emit('next');
     }
-    prevSlide(): void {
-        this.$emit('prev')
+    public prevSlide(): void {
+        this.$emit('prev');
     }
 
-  
+
 
 }
 </script>
