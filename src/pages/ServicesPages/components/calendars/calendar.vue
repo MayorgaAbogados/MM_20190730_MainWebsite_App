@@ -13,7 +13,7 @@
                                         day: 'Día',
                                         all_day: 'Todo el día'
                                     }"
-                                    :time-range="[1,23]"
+                                    :time-range="[8,21]"
                                     :available-views="['week']"
                                     :initial-date="new Date()"
                                     :initial-view="'week'"
@@ -68,11 +68,12 @@ export default class CalendarView extends Vue {
                 const startTime =  moment.utc(event.start);
                 const endTime =   moment.utc(event.end);
 
-                obj.date = date.local().toDate();
-                obj.startTime = startTime.local().format('hh:mm');
-                obj.endTime = endTime.local().format('hh:mm');
+                obj.date = date.toDate();
+                obj.startTime = startTime.toDate().toTimeString().split(' ')[0];
+                obj.endTime = endTime.toDate().toTimeString().split(' ')[0];
                 obj.id = md5(obj.date.toISOString() + Math.random());
 
+    
                 const startAsMinutes = (startTime.minutes() + startTime.hours() * 60);
                 const endAsMinutes= (startTime.minutes() + startTime.hours() * 60);
 

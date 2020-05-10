@@ -203,7 +203,6 @@ export default class ContactFormSlideView extends Vue {
             this.CONSULTING.nit.length > 0 &&
             this.CONSULTING.email.length > 0 && this.CONSULTING.email.includes('@') &&
             this.CONSULTING.phone.length > 0 &&
-            this.CONSULTING.skype.length > 0 &&
             this.CONSULTING.city.length > 0 &&
             this.CONSULTING.authorized_data === 'SI' &&
             this.CONSULTING.typeOfMeeting.length > 0 &&

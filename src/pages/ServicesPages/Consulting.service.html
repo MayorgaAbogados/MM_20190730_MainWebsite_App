@@ -9,6 +9,11 @@
         <swiper :options="swiperOption" ref="ConsultingSwiperRef">
 
 
+            <!-- slides / BookingCalendar -->
+            <swiper-slide name="BookingCalendarSlide">
+                <mm-slide-booking-calendar :isTest="false" @goToPayU="goToPayU($event)" @next="nextSlide()" @prev="prevSlide($event)"></mm-slide-booking-calendar>
+            </swiper-slide>
+
             
             <!-- slides / Welcome -->
             <swiper-slide name="WelcomeSlide">
@@ -21,11 +26,6 @@
                 <mm-slide-contact-form v-if="SLIDE_INDEX === 1" :isTest="false" @next="nextSlide($event)" @prev="prevSlide()"></mm-slide-contact-form>
             </swiper-slide>
 
-
-            <!-- slides / BookingCalendar -->
-            <swiper-slide name="BookingCalendarSlide">
-                <mm-slide-booking-calendar :isTest="false" @goToPayU="goToPayU($event)" @next="nextSlide()" @prev="prevSlide($event)"></mm-slide-booking-calendar>
-            </swiper-slide>
 
 
           <div class="swiper-pagination" slot="pagination"></div>
