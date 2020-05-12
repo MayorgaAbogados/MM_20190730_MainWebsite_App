@@ -98,7 +98,7 @@
             description: 'Consultoria Juridica Mayorga Abogados, ' + this.SCHEDULE_FORM.hours  + ' horas',
             referenceCode: 'MM' + md5('MM-'+(new Date()) + Math.random()+this.CONTACT_FORM.refCode + '-' + this.SCHEDULE_FORM.refCode).slice(0, 10),
             amount: this.SCHEDULE_FORM.hours*this.meetingRate,
-            tax: 1.00,
+            tax: 0.19,
             currency: 'COP',
             email: this.CONTACT_FORM.email,
             phone: this.CONTACT_FORM.phone,
