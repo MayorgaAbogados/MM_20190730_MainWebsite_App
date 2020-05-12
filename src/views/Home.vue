@@ -111,7 +111,7 @@ import MapComponent from '@/shared/section-components/maps/office-map.vue';
 export default class HomeView extends Vue {
 
   private goToServices(): void {
-
+        this.$router.push('/services/consulting');
   }
 }
 </script>

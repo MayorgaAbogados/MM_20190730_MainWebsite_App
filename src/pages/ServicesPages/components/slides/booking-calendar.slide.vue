@@ -2,7 +2,6 @@
 
      <div class="swiper-slide-wrapper calendar-booking" style="padding-top: 110px;">
 
-        <h1>CALENDAR</h1>
         <h2>Consulta con nuestro equipo legal con experiencia</h2>
 
         <div class="calendar-booking-wrapper">
@@ -75,5 +74,6 @@ export default class BookingCalendarSlideView extends Vue {
           text-decoration: line-through;
           opacity:0.8;
       }
+    
 </style>
 

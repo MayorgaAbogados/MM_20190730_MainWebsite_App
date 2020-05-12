@@ -60,5 +60,7 @@ body{
     overflow-x: hidden;
 }
 
-
+  .v-cal-header__title-bar{
+          display: none !important;
+      }
 </style>

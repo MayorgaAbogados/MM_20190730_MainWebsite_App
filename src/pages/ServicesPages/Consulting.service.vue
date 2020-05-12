@@ -110,6 +110,7 @@
 
     mounted() {
       this.swiper.slideTo(0, 1000, false);
+      document.querySelectorAll('.v-cal-header__actions .actions-left').forEach((el: any) => el.style.display = 'none');
     }
 
     async goToPayU($event: any) {
