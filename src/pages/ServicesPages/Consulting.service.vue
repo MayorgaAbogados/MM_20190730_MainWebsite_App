@@ -104,7 +104,6 @@
             phone: this.CONTACT_FORM.phone,
             responseUrl: 'http://server.mayorga.com.co/view/payments/confirm/payu',
             confirmationUrl: 'http://server.mayorga.com.co/api/payments/confirm/payu/type/'+'meeting'+'/id/'+this.MEETING_ID 
-
         }
     }
 
