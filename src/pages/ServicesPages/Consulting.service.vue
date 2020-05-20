@@ -80,15 +80,15 @@
         let price = 0;
         if(this.CONTACT_FORM.typeOfMeeting === 'Skype'){
             //price = 150000;
-            price = 15000;
+            price = 150000;
         } 
         if(this.CONTACT_FORM.typeOfMeeting === 'Oficina'){
            //price = 250000; 
-           price = 16000; 
+           price = 250000; 
         }
         if(this.CONTACT_FORM.typeOfMeeting === 'Domicilio'){
            //price = 350000; 
-           price = 17500; 
+           price = 350000; 
         }
         return price;
     }

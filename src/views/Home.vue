@@ -22,7 +22,7 @@
               <mm-grid-central>
 
                 <mm-title-large 
-                  :title="'ABOGADOS JURÍDICOS ESPECIALIZADOS *'">
+                  :title="'ABOGADOS JURÍDICOS ESPECIALIZADOS'">
                 </mm-title-large>
 
                 <mm-text-large 
@@ -30,7 +30,7 @@
                 </mm-text-large>
 
                 <mm-button 
-                  :text="'Conosca nuestros servicios'" @mmOnClick="goToServices()">
+                  :text="'Conozca nuestros servicios'" @mmOnClick="goToServices()">
                 </mm-button>
 
               </mm-grid-central>

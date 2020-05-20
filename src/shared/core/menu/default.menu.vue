@@ -76,30 +76,52 @@ export default class DefaultMenu extends Vue {
                     path: '/home/map',
                 }],
             }, {
-                title: 'Profesionales',
+                title: 'Nuestro Equipo',
                 items: [{
                     text: 'Director Juridico',
                     path: '/legal/director',
-                }, {
+                },/* {
                     text: 'Experiencia Juridica',
                     path: '/legal/experience',
-                }, {
+                },*/ {
                     text: 'Equipo Legal',
                     path: '/legal/team',
                 }],
             }, {
-                title: 'Servicios',
+                title: 'Planes de Servicio',
                 items: [{
-                    text: 'Consultorias',
+                    text: 'Gratis su primera consulta',
+                    path: 'http://server.mayorga.com.co/page/consulting/free/form/source/website',
+                }, {
+                    text: 'Agende su cita',
                     path: '/services/consulting',
                 }, {
-                    text: 'Apoyo Jurídico',
-                    path: '/services/supports',
-                }, {
-                    text: 'Cotizar Servicios',
-                    path: '/services/meetings',
+                    text: 'Afiliece como Cliente Premium',
+                    path: 'http://server.mayorga.com.co/page/membership/form/source/website',
                 }],
-            }
+            },
+            {
+                title: 'Noticias y Boletines',
+                items: [{
+                    text: 'Boletines',
+                    path: '/blog',
+                }, {
+                    text: 'Seminario',
+                    path: '/webminars',
+                }],
+            },
+            {
+                title: 'Consultas',
+                items: [{
+                    text: 'Su primera consulta gratis',
+                    path: '/services/free',
+                    },{
+                    text: 'Agende su cita',
+                    path: '/services/consulting',
+                    },
+                ],
+            },
+            
         ];
 
     }

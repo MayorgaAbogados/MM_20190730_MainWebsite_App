@@ -66,7 +66,11 @@ export default class DefaultDropdown extends Vue {
 
     private setCurrentSection(tab: string, section: string){
          this.$store.dispatch('UIHeaderMenuModule/SET_CURRENT_TAB', tab);
-         this.$router.push(section);
+         if(section.includes('http')){
+             location.href = section;
+         } else {
+            this.$router.push(section);
+         }
     }
 
 }
