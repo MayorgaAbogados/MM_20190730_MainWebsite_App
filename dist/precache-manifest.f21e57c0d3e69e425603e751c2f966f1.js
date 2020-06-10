@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9b041d6ef05a1ad5a583",
-    "url": "/css/app.818b50b1.css"
+    "revision": "e7ce72c8693f84c5ac35",
+    "url": "/css/app.a4726a07.css"
   },
   {
     "revision": "f1851d6053b96d7846f5",
@@ -14,10 +14,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "20d126a63861110d506c6154e4dbab0d",
     "url": "/img/Recurso 5.20d126a6.jpg"
-  },
-  {
-    "revision": "9039bd8a7e3b0c4ddbc341a45a3f32c9",
-    "url": "/img/Webp.net-compress-image.9039bd8a.jpg"
   },
   {
     "revision": "947dc2fc7eb2eda00a1f7d339cd4aa67",
@@ -52,12 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/map-icon-mm.aedcaf3d.png"
   },
   {
-    "revision": "3a21ad796db60fd13e5d6c4ef0b072b7",
+    "revision": "ec14845379b39ba8e1f681745c01fda4",
     "url": "/index.html"
   },
   {
-    "revision": "9b041d6ef05a1ad5a583",
-    "url": "/js/app.33c764de.js"
+    "revision": "e7ce72c8693f84c5ac35",
+    "url": "/js/app.037ef7cf.js"
   },
   {
     "revision": "f1851d6053b96d7846f5",

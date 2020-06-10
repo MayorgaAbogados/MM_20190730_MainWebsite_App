@@ -49,6 +49,10 @@
         -webkit-align-items: center;
         -ms-flex-align: center;
         align-items: center;
+
+        &:hover{
+            opacity: 0.8;
+        }
     }
 
     div.mm-logo img.mm-icon-logo{

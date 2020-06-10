@@ -10,7 +10,7 @@
 
           <template slot="background">
 
-            <video autoplay muted loop playsinline preload="none" :poster="require('../assets/videos/home-cover-bg-video-hd.jpg')" class="lazy parallax-media">
+            <video  style="filter: brightness(0.5);" autoplay muted loop playsinline preload="none" :poster="require('../assets/videos/home-cover-bg-video-hd.jpg')" class="lazy parallax-media">
                 <source src="../assets/videos/home-cover-bg-video-hd.webm" type="video/webm">
                 <source src="../assets/videos/home-cover-bg-video-hd.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -44,7 +44,15 @@
       <section>
               <mm-grid-double-columns>
                 <template slot="col1">
-                    <mm-parallax-list></mm-parallax-list>
+                    <mm-parallax-list
+                        :scrollInit="30"
+                        :listTitle="'¿QUIÉNES <br> SOMOS?'"
+                        :listSubtitle="''"
+                        :listDescription="'<strong>MAYORGA ABOGADOS</strong>, es un Estudio Jurídico y Económico, creado en 2005, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en asesoría y asistencia legal corporativa, en las siguientes AREAS DE PRÁCTICA:'"
+                        :listItems="['Derecho Aduanero','Derecho Penal y Económico', 'Derecho del Comercio Exterior', 'Derecho Tributario', 'Derecho Cambiario','Derecho Mercantil y Societario']"
+                        :buttonText="'Exitos y logros'"
+                        :buttonPath="'/'"
+                    ></mm-parallax-list>
                 </template>
                 <template slot="col2">
                     <mm-parallax-image :src="require('../assets/images/Webp.net-resizeimage.jpg')"></mm-parallax-image>

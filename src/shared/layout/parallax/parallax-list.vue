@@ -3,54 +3,30 @@
         
          <div class="wrapper">
 
-                <div class="title-line" v-scroll-show="rScroll > 30"></div>
+                <div class="title-line" v-scroll-show="rScroll > scrollInit"></div>
                 
-                <h1 class="title-text"  v-scroll-show="rScroll > 40">¿QUIÉNES <br> SOMOS?</h1>
+                <h1 class="title-text"  v-scroll-show="rScroll > scrollInit + 5" v-html="listTitle"></h1>
                 
-                <p v-scroll-show="rScroll > 50">
-                    <strong>MAYORGA ABOGADOS</strong>, es un Estudio Jurídico y Económico, creado en 2005, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en  asesoría y asistencia legal corporativa, en las siguientes AREAS DE PRÁCTICA:
+                <h1 class="subtitle-text"  v-if="listSubtitle" v-scroll-show="rScroll > scrollInit + 7" v-html="listSubtitle"></h1>
+                
+                <p v-if="listDescription" v-scroll-show="rScroll > scrollInit + 10" v-html="listDescription">
                 </p>
+
                 <ul>
-                    <li v-scroll-show="rScroll > 70">
+                    <li v-scroll-show="rScroll > scrollInit + 40 + 5*kItem" v-for="(listItem, kItem) of listItems" v-bind:key="listItem">
                         <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Aduanero
-                        </div>
-                    </li>
-                    <li v-scroll-show="rScroll > 75"> 
-                        <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Penal y Económico
-                        </div>
-                    </li>
-                    <li v-scroll-show="rScroll > 80">
-                        <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho del Comercio Exterior
-                        </div>
-                    </li>
-                    <li v-scroll-show="rScroll > 85">
-                        <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Tributario
-                        </div>
-                    </li>
-                    <li v-scroll-show="rScroll > 90">
-                        <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Cambiario
-                        </div>
-                    </li>
-                    <li v-scroll-show="rScroll > 95">
-                        <img class="li-bullet" src="@/assets/images/blue-square-bullet.jpg">
-                        <div class="li-wrapper">
-                            Derecho Mercantil y Societario
+                        <div class="li-wrapper" v-html="listItem">
+                           
                         </div>
                     </li>
                 </ul>
-                <button v-scroll-show="rScroll > 98">Exitos y logros</button>
-            </div>
-      
+                <button v-scroll-show="rScroll > scrollInit + 40 + 5*listItems.length">
+                    {{ buttonText }}
+                </button>
+        </div>
+
+        {{ rScroll }} , {{ scrollInit }}
+    
     </section>
 </template>
 
@@ -87,6 +63,21 @@ div.wrapper{
         padding: 0.5em 0em;
         
         color: @color-dark-blue;
+        font-family: 'Roboto', sans-serif;
+        font-size: @font-title-size;
+        font-weight: 700;
+        letter-spacing: 1px;
+
+        #scroll-show-fade();    
+
+    }
+    h1.subtitle-text{
+
+        display: block;
+        width: fit-content;
+        padding: 0.5em 0em;
+        
+        color: @color-light-blue;
         font-family: 'Roboto', sans-serif;
         font-size: @font-title-size;
         font-weight: 700;
@@ -147,6 +138,9 @@ div.wrapper{
             margin-left: 1em;
             padding: 0.25em 0em;
             border-bottom: 2px solid @color-light-blue;
+            strong{
+                font-weight: 900;
+            }
         }
     }
 
@@ -161,6 +155,11 @@ div.wrapper{
         letter-spacing: 1px;
  
         background-color: @color-dark-blue;
+
+        &:hover{
+            opacity: 0.8;
+            cursor: pointer;
+        }
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -170,11 +169,19 @@ div.wrapper{
 
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class ParallaxList extends Vue {
 
- get gScroll(): number {
+    @Prop({default: 'scrollInit'}) public scrollInit: number|undefined;
+    @Prop({default: 'listTitle'}) public listTitle: string|undefined;
+    @Prop({default: 'listSubtitle'}) public listSubtitle: string|undefined;
+    @Prop({default: 'listDescription'}) public  listDescription: string|undefined;
+    @Prop({default: 'listItems'}) public  listItems: string[]|undefined;
+    @Prop({default: 'buttonText'}) public  buttonText: string|undefined;
+    @Prop({default: 'buttonPath'}) public  buttonPath: string|undefined;
+
+    get gScroll(): number {
         return this.$store.getters['UIParallaxModule/getPosition'];
     }
 

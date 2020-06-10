@@ -32,6 +32,11 @@ export default class DefaultButton extends Vue {
     font-family: Roboto,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
+
+}
+
+.mm-button:hover{
+    opacity: 0.8;
 }
 </style>
 

@@ -15,7 +15,7 @@
   <div class="footer-center col-md-4 col-sm-6">
     <div>
       <i class="fa fa-map-marker" style="display:inline-block;"></i>
-      <p><span>  Calle 22 f # 85a </span>Bogotá, Colombia</p>
+      <p><span>  Av. El Dorado, # 68 C 61, Teusaquillo </span> Bogotá, Colombia</p>
     </div>
     <div>
       <i class="fa fa-phone"></i>
@@ -28,8 +28,8 @@
   </div>
   <div class="footer-right col-md-4 col-sm-6">
      <div class="footer-middle-logo">
-                <img class="m-logo" src="./../../../assets/images/m-logo.png">
-                <img class="m-text" src="./../../../assets/images/m-text.png">
+        <img class="m-logo" src="./../../../assets/images/m-logo.png">
+        <img class="m-text" src="./../../../assets/images/m-text.png">
     </div>
     <p class="menu">
       <a href="#"> Home</a> |
@@ -212,6 +212,12 @@ footer{
   line-height: 35px;
   margin-right: 3px;
   margin-bottom: 5px;
+
+  &:hover{
+      i{
+        color: #60A8E2
+      }
+  }
   i{
     color: #33383b;
   }
@@ -258,7 +264,7 @@ footer{
 }
 
 .footer .footer-center p a {
-  color: #0099ff;
+  color: white;
   text-decoration: none;
 }
 
@@ -294,11 +300,11 @@ footer{
 }
 
 .footer .menu a:hover {
-  color: #0099ff;
+  color: #60a8e2;
 }
 
 .footer .name {
-  color: #0099ff;
+  color: white;
   font-size: 14px;
   font-weight: normal;
   margin: 0;

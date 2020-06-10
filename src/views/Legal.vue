@@ -3,25 +3,26 @@
 
     <mm-header></mm-header>
 
-    <mm-parallax-section>
-        <template slot="background">
-          <img src="../assets/images/Webp.net-compress-image.jpg" style="
-              width: 100vw;
-              border-style: none;
-              height: 125vh;
-              object-fit: cover;
-              object-position: center center;">
-        </template>
-    </mm-parallax-section>
-
-
     <section>
             <mm-grid-double-columns>
               <template slot="col1">
                   <mm-parallax-image :src="require('../assets/images/people/Recurso 5.jpg')"></mm-parallax-image>
               </template>
               <template slot="col2">
-                  <mm-parallax-list></mm-parallax-list>
+                  <mm-parallax-list 
+                    :scrollInit="-100"
+                    :listTitle="'Director Juridico'"
+                    :listSubtitle="'Miguel A. Mayorga:'"
+                    :listDescription="''"
+                    :listItems="[
+                        '<strong>Abogado</strong> egresado de la Universida Nacional de Colombia (GRADUADO CON HONORES)',
+                        '<strong>Especializado en Tribuación y Comercio Exterior</strong> en la Universidad de los Andes (GRADUADO CON HONOERS)',
+                        '<strong>Diplomado Intercional SEMINAIRE DE FORMATIOM D ENQUETEURS</strong> Direction Nationale du Recrutement et de la Formation Professionnelle des Douanes Francaises',
+                        '<strong>Programa de Extensión DERECHO Y RELACIONES INTERNACIONALES </strong> de la Universidad Nacional de Colombia ',
+                    ]"
+                    :buttonText="'Contactar'"
+                    :buttonPath="'/'"
+                  ></mm-parallax-list>
               </template>
             </mm-grid-double-columns>
     </section>

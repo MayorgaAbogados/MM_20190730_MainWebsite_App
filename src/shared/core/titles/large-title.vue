@@ -24,7 +24,7 @@ export default class LargeTitle extends Vue {
     letter-spacing: 1px;
 
     font-size: 35pt;
-    font-weight: 300;
+    font-weight: 600;
     padding: .5em 0;
 
 }
