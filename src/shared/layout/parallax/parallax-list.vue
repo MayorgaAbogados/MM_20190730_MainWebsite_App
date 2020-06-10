@@ -25,7 +25,6 @@
                 </button>
         </div>
 
-        {{ rScroll }} , {{ scrollInit }}
     
     </section>
 </template>
