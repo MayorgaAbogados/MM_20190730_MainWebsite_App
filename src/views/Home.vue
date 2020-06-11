@@ -46,6 +46,7 @@
                 <template slot="col1">
                     <mm-parallax-list
                         :scrollInit="30"
+                        :marginTop="0"
                         :listTitle="'¿QUIÉNES <br> SOMOS?'"
                         :listSubtitle="''"
                         :listDescription="'<strong>MAYORGA ABOGADOS</strong>, es un Estudio Jurídico y Económico, creado en 2005, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en asesoría y asistencia legal corporativa, en las siguientes AREAS DE PRÁCTICA:'"

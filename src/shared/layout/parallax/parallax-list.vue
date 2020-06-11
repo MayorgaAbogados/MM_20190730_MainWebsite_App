@@ -1,9 +1,12 @@
 <template>
     <section class="mm-parallax mm-parallax-list" >
         
-         <div class="wrapper">
-
-                <div class="title-line" v-scroll-show="rScroll > scrollInit"></div>
+         <div class="wrapper" >
+          
+                <div class="title-line" 
+                    :style="{ marginTop : marginTop + 'px' }" 
+                    v-scroll-show="rScroll > scrollInit" >
+                </div>
                 
                 <h1 class="title-text"  v-scroll-show="rScroll > scrollInit + 5" v-html="listTitle"></h1>
                 
@@ -59,7 +62,7 @@ div.wrapper{
 
         display: block;
         width: fit-content;
-        padding: 0.5em 0em;
+        padding: 0.25em 0em;
         
         color: @color-dark-blue;
         font-family: 'Roboto', sans-serif;
@@ -74,7 +77,7 @@ div.wrapper{
 
         display: block;
         width: fit-content;
-        padding: 0.5em 0em;
+        padding: 0em 0em;
         
         color: @color-light-blue;
         font-family: 'Roboto', sans-serif;
@@ -172,6 +175,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component({})
 export default class ParallaxList extends Vue {
 
+    @Prop({default: 'marginTop'}) public marginTop: number|undefined;
     @Prop({default: 'scrollInit'}) public scrollInit: number|undefined;
     @Prop({default: 'listTitle'}) public listTitle: string|undefined;
     @Prop({default: 'listSubtitle'}) public listSubtitle: string|undefined;

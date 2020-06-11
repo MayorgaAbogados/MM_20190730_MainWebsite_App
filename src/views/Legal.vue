@@ -11,6 +11,7 @@
               <template slot="col2">
                   <mm-parallax-list 
                     :scrollInit="-100"
+                    :marginTop="100"
                     :listTitle="'Director Juridico'"
                     :listSubtitle="'Miguel A. Mayorga:'"
                     :listDescription="''"

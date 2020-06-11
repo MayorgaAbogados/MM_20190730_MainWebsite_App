@@ -243,8 +243,9 @@ div.mm-dq-size-small{width: 5em;}
 
 div.mm-dq-is-active{
     div.mm-dropdown-header .wrapper h1{
-        border-top: 3px solid #60a8e2;
+        border-top: 2px solid #60a8e2;
         border-bottom: 2px solid #ffffff;
+        color: #60a8e2;
     }
     .hide{
        background-color: white;
