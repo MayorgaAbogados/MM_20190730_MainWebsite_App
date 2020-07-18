@@ -1,0 +1,32 @@
+<mm-parallax-section>
+
+    <template slot="background">
+
+      <video  style="filter: brightness(0.5);" autoplay muted loop playsinline preload="none" :poster="require('../../../../assets/videos/home-cover-bg-video-hd.jpg')" class="lazy parallax-media">
+          <source src="../../../../assets/videos/home-cover-bg-video-hd.webm" type="video/webm">
+          <source src="../../../../assets/videos/home-cover-bg-video-hd.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+
+    </template>
+
+    <template slot="content">
+        <mm-grid-central>
+
+          <mm-title-large 
+            :titleHTML="'MAYORGA ABOGADOS'">
+          </mm-title-large>
+
+          <mm-text-large 
+            :textHTML="'¡ Soluciones Jurídicas y Financieras !'">
+          </mm-text-large>
+
+          <mm-button 
+            :textHTML="'Asistencia Legal <strong>inmediata</strong>'" @mmOnClick="goToServices()">
+          </mm-button>
+
+        </mm-grid-central>
+    </template> 
+
+</mm-parallax-section>
+

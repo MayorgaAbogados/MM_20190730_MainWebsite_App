@@ -1,0 +1,138 @@
+@import '../../../styles/vendor/flexbox.less';
+@import '../../../styles/vendor/hamburger.less';
+
+
+
+
+div.mm-logo {
+
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 6px 6px;
+    border-bottom: 1px solid #bcbcbe;
+    z-index: 100;
+    background-color: white;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+
+
+
+
+div.mm-logo img.mm-icon-logo {
+    display: block;
+    box-sizing: border-box;
+    width: 70px;
+    height: 60px;
+    object-fit: contain;
+    padding: 10px 10px;
+    padding-right: 5px;
+    max-width: 4em;
+}
+
+div.mm-logo img.mm-icon-text {
+    display: none;
+    box-sizing: border-box;
+    width: 50%;
+    height: 60px;
+    object-fit: contain;
+    padding: 10px 0px;
+    object-position: left;
+    padding-left: 0.5em;
+}
+
+div.mm-icon-hamburger {
+    display: block;
+    padding-left: calc(100vw - 120px);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 1200px) {
+    div.mm-logo {
+        width: 15em;
+        height: 85px;
+        padding: 5px;
+        border-bottom: 0px solid #bcbcbe;
+
+    }
+
+    div.mm-logo img.mm-icon-text {
+        display: block;
+    }
+
+    div.mm-icon-hamburger {
+        display: none;
+    }
+
+
+    div.mm-logo {
+        -webkit-transition: all 500ms linear;
+        -moz-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+        -o-transition: all 500ms linear;
+        transition: all 500ms linear;
+
+        -moz-transform: scale(1);
+        -webkit-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+
+        background-color: white;
+
+    }
+
+    div.mm-logo:hover {
+        filter: drop-shadow(-8px -7px 6px gray);
+
+        -moz-transform: scale(0.98);
+        -webkit-transform: scale(0.98);
+        -o-transform: scale(0.98);
+        -ms-transform: scale(0.98);
+        transform: scale(0.98);
+
+        -webkit-transition: all 500ms linear;
+        -moz-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+        -o-transition: all 500ms linear;
+        transition: all 500ms linear;
+    }
+
+}

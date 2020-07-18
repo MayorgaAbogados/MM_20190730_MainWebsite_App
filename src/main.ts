@@ -20,9 +20,9 @@ Vue.use(BootstrapVue);
 // --------------------------------------------------- //
 // -- V-Calendar Resources ---------------------------- //
 // --------------------------------------------------- //
-import VueScheduler from 'v-calendar-scheduler';
-import 'v-calendar-scheduler/lib/main.css';
-Vue.use(VueScheduler);
+//import VueScheduler from './vendors/v-calendar-scheduler-2/components/VueScheduler.vue';
+//import './vendors/v-calendar-scheduler-2/lib/main.css';
+//Vue.use(VueScheduler);
 // --------------------------------------------------- //
 
 

@@ -1,0 +1,34 @@
+<section>
+    <swiper :options="swiperOption" ref="ConsultingSwiperRef">
+
+        <!-- slides / Welcome -->
+        <swiper-slide name="swiperSlideCover">
+            <mm-slide-cover></mm-slide-cover>
+        </swiper-slide>
+
+
+        <!-- slides / ContactForm -->
+        <swiper-slide name="swiperSlideForm">
+            <mm-slide-form></mm-slide-form>
+        </swiper-slide>
+
+
+
+        <!-- slides / BookingCalendar -->
+        <swiper-slide name="swiperSlideCalendar">
+            <mm-slide-calendar></mm-slide-calendar>
+        </swiper-slide>
+
+
+
+        <!-- slides / BookingCalendar -->
+        <swiper-slide name="swiperSlidepayment">
+           
+        </swiper-slide>
+
+
+
+      <div class="swiper-pagination" slot="pagination"></div>
+
+    </swiper>
+</section>

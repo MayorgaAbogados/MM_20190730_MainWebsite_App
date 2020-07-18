@@ -1,0 +1,24 @@
+<section>
+    <mm-grid-double-columns>
+      <template slot="col1">
+          <mm-parallax-list
+              :scrollInit="30"
+              :marginTop="0"
+              :listTitle="'¿QUIÉNES <br> SOMOS?'"
+              :listSubtitle="''"
+              :listDescription="'<strong>MAYORGA ABOGADOS</strong>, Estudio Jurídico y Financiero, creado en 2005 e integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; con éxitos totalmente verificables, en asesoría y asistencia legal corporativa (jurídica y financiera).'"
+              :listItems="[
+              'Insolvencia Y Reestructuración Societaria','Mercantil (Contratos, Seguros, Fusiones Y Escisiones)', 
+              'Tributario Y Planeación Fiscal', 'Derecho Aduanero y de Comercio Exterior', 
+              'Inversión Extranjera','Derecho Penal', 'Laboral Corporativo', 'Derecho Cambiario', 'Derecho De Familia',
+              'Derecho Administrativo', 'Derecho Ambiental'
+              ]"
+              :buttonText="'Exitos y logros'"
+              :buttonPath="'/'"
+          ></mm-parallax-list>
+      </template>
+      <template slot="col2">
+          <mm-parallax-image :src="require('../../../../assets/images/Webp.net-resizeimage.jpg')" :scrollY0 = "20"></mm-parallax-image>
+      </template>
+    </mm-grid-double-columns>
+</section>

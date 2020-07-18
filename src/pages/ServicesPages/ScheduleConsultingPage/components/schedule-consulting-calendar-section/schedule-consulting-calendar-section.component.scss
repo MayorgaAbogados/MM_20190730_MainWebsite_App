@@ -1,0 +1,17 @@
+//  Import the default variables
+@import "../../../../../vendors/v-calendar-scheduler-2//scss/variables";
+
+
+//  Set your variables
+$v-cal-body-bg: rgba(0,0,0,0);
+$v-cal-days-head-bg: #345063;
+$v-cal-days-head-color: white;
+
+$v-cal-event-bg: #578ABE; //  Event background color
+$v-cal-event-border-radius: 10px; //  Events border radius (all 4 corners)
+
+
+
+//  Import the rest
+@import "../../../../../vendors/v-calendar-scheduler-2/scss/main";
+

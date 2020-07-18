@@ -1,0 +1,166 @@
+<section class="free-consulting-form-section">
+
+    <div class="form">
+        
+        <mm-title
+            :titleHTML="'Formulario de Consulta'"
+            :themeColor="'dark'"
+            :themeWeight="300"
+            :paddingBottom="0"
+        ></mm-title>
+
+        <mm-text
+            :titleHTML="'Consulta con nuestro equipo legal con experiencia'"
+            :themeColor="'dark'"
+            :themeWeight="300"
+            :paddingBottom="20"
+        ></mm-text>
+
+
+        <div class="mm-row x1">
+            <mm-user-name-input
+                :index="1"
+                :label="'Nombres y Apellidos'"
+                :error="getError('name')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setUserName($event)"
+            ></mm-user-name-input>
+        </div>
+
+        <div class="mm-row x1">
+            <mm-position-input
+                :index="2"
+                :label="'Cargo en la Empresa'"
+                :error="getError('position')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setPosition($event)"
+            ></mm-position-input>
+        </div>
+
+        <div class="mm-row x1">
+            <mm-company-name-input
+                :index="3"
+                :label="'Razón Social Empresa'"
+                :error="getError('company-name')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setCompanyName($event)"
+            ></mm-company-name-input>
+        </div>
+        <div class="mm-row x1">
+           <mm-company-nit-input
+                :index="4"
+                :label="'NIT Empresa o Consultante'"
+                :error="getError('company-nit')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setCompanyNIT($event)"
+           ></mm-company-nit-input>
+        </div>
+
+        <div class="mm-row x2">
+            <mm-user-email
+                :index="5"
+                :label="'E-mail'"
+                :error="getError('email')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setEmail($event)"
+            ></mm-user-email>
+            <mm-user-phone
+                :index="6"
+                :label="'Celular'"
+                :error="getError('phone')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setPhone($event)"
+            ></mm-user-phone>
+        </div>
+    
+
+        <div class="mm-row x2">
+            <mm-user-skype
+                :index="7"
+                :label="'Skype'"
+                :error="getError('skype')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setSkype($event)"
+            ></mm-user-skype>
+            <mm-user-city
+                :index="8"
+                :label="'Ciudad'"
+                :error="getError('city')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setCity($event)">
+            </mm-user-city>
+        </div>
+    
+        <hr> 
+        
+        <div class="mm-row x1">
+            <mm-authorize-data
+                :index="9"
+                :group="'AUTHTORIZE_DATA'"
+                :label="'Autoriza el uso de datos: '"
+                :value="authorizeDataOptions[0]"
+                :bullets="authorizeDataOptions"
+                @onChange="setAuthorizeData($event)"
+            ></mm-authorize-data>
+         </div>
+
+         <div class="mm-row x1">
+            <mm-consulting-type
+                :index="10"
+                :group="'CONSULTING_TYPE'"
+                :label="'Forma que desea ser atendido '"
+                :value="consultingTypesOptions[0]"
+                :bullets="consultingTypesOptions"
+                @onChange="setConsultingType($event)"
+            ></mm-consulting-type>
+         </div>
+
+         <div class="mm-row x1">
+            <mm-comments
+                :index="11"
+                :label="'Preguntas o resumen de caso'"
+                :error="getError('comments')"
+                :placeholder="''"
+                :value="''"
+                @onChange="setComments($event)"
+            ></mm-comments>
+         </div>
+
+ 
+         <mm-button
+            :textHTML="'Siguiente'"
+            @mmOnClick="submit()"
+         ></mm-button>
+
+ 
+
+        </div>
+
+
+    <div class="modal" v-if="UI.isModalShow">
+        <div class="modal--wrapper">
+            <mm-text
+                :titleHTML="'Favor ingresar los valores correctos en el formulario'"
+                :themeColor="'dark'"
+                :themeWeight="300"
+                :paddingBottom="0"
+            ></mm-text>
+            <mm-button
+                v-bind:textHTML="'Aceptar'"
+                v-bind:marginTop="15"
+                v-bind:marginBottom="15"
+                v-on:mmOnClick="hideModal()"
+            ></mm-button>
+        </div>
+    </div>
+
+</section>
+

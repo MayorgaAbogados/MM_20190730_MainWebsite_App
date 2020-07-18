@@ -1,0 +1,44 @@
+<section class="schedule-consulting-calendar-section">
+
+
+    <div class="form">
+        
+        <mm-title
+            :titleHTML="'Agenda'"
+            :themeColor="'dark'"
+            :themeWeight="300"
+            :paddingBottom="0"
+        ></mm-title>
+
+
+        <mm-text
+            :titleHTML="'Consulta con nuestro equipo legal con experiencia'"
+            :themeColor="'dark'"
+            :themeWeight="300"
+            :paddingBottom="20"
+        ></mm-text>
+
+
+    </div>
+
+
+
+    <div class="calendar">
+        <div class="calendar--wrapper">
+             <vue-scheduler 
+                    :use12="true"
+                    :events="EVENTS" 
+                    :labels="CALENDAR.labels"
+                    :time-range="CALENDAR.timeRange"
+                    :available-views="CALENDAR.views"
+                    :initial-date="CALENDAR.initial.date"
+                    :initial-view="CALENDAR.initial.view"
+                    :show-time-marker="CALENDAR.showTimeMarker"
+                    :show-today-button="CALENDAR.showTodayButton"
+                    eventDisplay="html"
+                    @event-clicked="onEventClicked"
+                    @event-created="onEventCreated"                    
+                />
+        </div>
+    </div>
+</section>

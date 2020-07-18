@@ -22,15 +22,15 @@
               <mm-grid-central>
 
                 <mm-title-large 
-                  :title="'ABOGADOS JURÍDICOS ESPECIALIZADOS'">
+                  :title="'MAYORGA ABOGADOS'">
                 </mm-title-large>
 
                 <mm-text-large 
-                  :text="'Estudio Jurídico y Económico, integrado actualmente por profesionales especializados (abogados, economistas y contadores), egresados de las mejores universidades de Colombia y el Exterior; en asesoría y asistencia legal corporativa'">
+                  :text="'¡ Soluciones Jurídicas y Financieras ! // subir fuente y letter spacing'">
                 </mm-text-large>
 
                 <mm-button 
-                  :text="'Conozca nuestros servicios'" @mmOnClick="goToServices()">
+                  :text="'Asistencia Legal <strong>inmediata</strong>'" @mmOnClick="goToServices()">
                 </mm-button>
 
               </mm-grid-central>

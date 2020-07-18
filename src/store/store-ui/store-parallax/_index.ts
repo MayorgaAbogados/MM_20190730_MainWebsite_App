@@ -1,4 +1,4 @@
-import { TABS_TYPE } from '../../../shared/layout/headers/models/tabs.enum';
+import { TABS_TYPE } from '../../../shared/headers/basic-header/models/tabs.enum';
 
 export default {
 

@@ -7,7 +7,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import DefaultLoaderComponent from './shared/core/loader/default.router.loader.vue';
+import DefaultLoaderComponent from './shared/loaders/loader/default.router.loader.vue';
+
 @Component({
   components: {
     'router-loader' : DefaultLoaderComponent
@@ -17,7 +18,7 @@ export default class App extends Vue {
 
   public handleScroll(event: any) {
       const maxY = (document as any).documentElement.clientHeight;
-      const posY = (document as any).getElementById('view').scrollTop;
+      const posY = (document as any).getElementById('page').scrollTop;
       const pos$ = 100.00 * (posY + 0.0) / (maxY + 0.0);
 
       const scroll = (document as any).getScroll()[1];
@@ -49,7 +50,7 @@ body{
   text-align: center;
   color: #2c3e50;
 
-  cursor: url(https://image.flaticon.com/icons/svg/1612/1612636.svg), pointer;
+  //cursor: url(https://image.flaticon.com/icons/svg/1612/1612636.svg), pointer;
 
 }
 

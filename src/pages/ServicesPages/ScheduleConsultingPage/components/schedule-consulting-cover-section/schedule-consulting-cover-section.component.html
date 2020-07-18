@@ -1,0 +1,29 @@
+<div class="section-parallax">
+<mm-parallax-section>
+
+    <template slot="background">
+
+      <img class="bg-image" src="../../../../../assets/images/thumbnail_manos.png">
+
+    </template>
+
+    <template slot="content">
+        <mm-grid-central>
+
+          <mm-title-large 
+            :titleHTML="'MAYORGA ABOGADOS'">
+          </mm-title-large>
+
+          <mm-text-large 
+            :textHTML="'¡ Soluciones Jurídicas y Financieras !'">
+          </mm-text-large>
+
+          <mm-button 
+            :textHTML="'Asistencia Legal <strong>inmediata</strong>'" @mmOnClick="goToServices()">
+          </mm-button>
+
+        </mm-grid-central>
+    </template> 
+
+</mm-parallax-section>
+</div>

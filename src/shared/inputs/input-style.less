@@ -1,0 +1,180 @@
+@import '../../styles/themes/colors';
+@import '../../styles/themes/sizes';
+@import '../../styles/themes/fonts';
+
+.mm-input {
+    display: block;
+    width: 100%;
+    font-family: @main-font-family;
+    font-size: @med-text-font-size;
+    margin-bottom: 1em;
+}
+
+.mm-input--row {
+    display: block;
+    width: 100%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+.mm-input--index {
+    color: @color-blue-main;
+    padding-right: 0.5em;
+    font-family: @main-font-family;
+    font-size: @med-text-font-size;
+}
+
+.mm-input--label {
+        font-family: @main-font-family;
+    font-size: @med-text-font-size;
+}
+
+.mm-input-error {
+    color: red;
+        font-family: @main-font-family;
+    font-size: 0.6*@med-text-font-size;
+    letter-spacing: 1px;
+    text-align: right;
+    display: block;
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+.mm-input--wrapper {
+
+    display: block;
+    width: 100%;
+    background-color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid white;
+
+    &.error {
+        border: 1px solid red;
+        color: red;
+        input{
+            color: red !important;
+        }
+    }
+}
+
+.mm-input--row .mm-input--wrapper  {
+
+
+    input, textarea{
+        display: block;
+        width: 100%;
+
+        outline: none;
+        border: none;
+        font-family: @main-font-family;
+        font-size: @med-text-font-size;
+
+        opacity: 0.7;
+    }
+
+}
+
+
+.mm-input--row  .mm-input-bullets{
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    padding: 1em;
+
+}
+
+.mm-input--row  .mm-input-bullets .mm-input-bullet{
+    display: block;
+    min-width: 4em;
+    min-height: 1.5em;
+    padding-right: 0em;
+}
+
+.mm-input--row  .mm-input-bullets .mm-input-bullet--wrapper{
+
+    display: block;
+    width: 100%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    input{
+        position: relative;
+        display: block;
+        padding: 1em;
+        top: 3px;
+    }
+
+   
+
+    label{
+        padding-left: 1em;
+        margin-bottom: 0rem;
+    }
+
+    p{
+        display: block;
+        width: calc(100% - 3em);
+        box-sizing: border-box;
+        padding-left: 2em;
+        text-align: left;
+
+        span.normal{}
+        span.discount{
+            text-decoration: line-through;
+        }
+    }
+}
